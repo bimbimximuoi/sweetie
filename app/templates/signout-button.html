@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Out</title>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBqaF_0sewu2zB1w8yMfx7ePHOhF6221KY",
+            authDomain: "sweetie-a7fb2.firebaseapp.com",
+            projectId: "sweetie-a7fb2",
+            storageBucket: "sweetie-a7fb2.appspot.com",
+            messagingSenderId: "1046992011333",
+            appId: "1:1046992011333:web:b63930e6e07aa1fdb5232c"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+<body>
+    <button id="signOut" onclick={signOut()} class="bg-background-dark text-white font-bold py-2 px-4 rounded mt-4 inline-block">Sign out</button>
+
+    <script>
+        // Initialize Firebase Authentication and get a reference to the service
+        const auth = firebase.auth();
+
+        const signOut = () => {
+            auth.signOut().then(() => {
+                fetch('/auth/signout', {
+                    method: 'GET'
+                }).then(response => response.json())
+                  .then(data => {
+                      if (data.success) {
+                          console.log('User signed out');
+                          // Redirect or perform any further actions after successful sign out
+                          window.location.href = '/signin';  // Redirect to the homepage or any other page
+                      } else {
+                          console.log('Sign out failed');
+                      }
+                  });
+            }).catch((error) => {
+                console.error('Error signing out:', error);
+            });
+        };
+    </script>
+</html>
