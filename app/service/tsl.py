@@ -60,28 +60,3 @@ def translate():
     translated_text = translate_text('\n'.join(book_data.values()), language, socket_id)
     return jsonify({'success': True, 'translated_text': translated_text})
 
-
-
-
-# from flask import Blueprint, request, jsonify
-# from .tasks import translate_text
-# from flask_socketio import emit
-# from .. import socketio
-
-# translate_bp = Blueprint('translate_bp', __name__)
-
-# @translate_bp.route('/book/translate', methods=['POST'])
-# def translate():
-#     data = request.get_json()
-#     if 'book_data' not in data or 'language' not in data or 'socket_id' not in data:
-#         return jsonify({'error': 'No book data, language, or socket ID specified'}), 400
-
-#     book_data = data['book_data']
-#     language = data['language']
-#     socket_id = data['socket_id']
-
-#     if language not in models:
-#         return jsonify({'error': 'Unsupported language'}), 400
-
-#     task = translate_text.apply_async(args=['\n'.join(book_data.values()), language, socket_id])
-#     return jsonify({'success': True, 'task_id': task.id})

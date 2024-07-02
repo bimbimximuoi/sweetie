@@ -12,7 +12,36 @@ def base():
 
 @main_bp.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
+    books = [
+        {"ten_sach": "To Kill a Mockingbird", "chu_de": "Novel", "ngon_ngu": "English", "so_trang": 281, "so_tu": "1099"},
+        {"ten_sach": "1984", "chu_de": "Dystopian", "ngon_ngu": "English", "so_trang": 328, "so_tu": "1599"},
+        {"ten_sach": "The Great Gatsby", "chu_de": "Novel", "ngon_ngu": "English", "so_trang": 180, "so_tu": "1099"},
+        {"ten_sach": "Moby Dick", "chu_de": "Adventure", "ngon_ngu": "English", "so_trang": 635, "so_tu": "1299"},
+        {"ten_sach": "War and Peace", "chu_de": "Historical", "ngon_ngu": "Russian", "so_trang": 1225, "so_tu": "2099"},
+        {"ten_sach": "Pride and Prejudice", "chu_de": "Romance", "ngon_ngu": "English", "so_trang": 279, "so_tu": "939"},
+        {"ten_sach": "The Catcher in the Rye", "chu_de": "Novel", "ngon_ngu": "English", "so_trang": 277, "so_tu": "869"},
+        {"ten_sach": "The Hobbit", "chu_de": "Fantasy", "ngon_ngu": "English", "so_trang": 310, "so_tu": "1499"},
+        {"ten_sach": "Crime and Punishment", "chu_de": "Philosophical", "ngon_ngu": "Russian", "so_trang": 430, "so_tu": "1199"},
+        {"ten_sach": "The Brothers Karamazov", "chu_de": "Philosophical", "ngon_ngu": "Russian", "so_trang": 796, "so_tu": "1899"}
+    ]
+    data = [
+        {"ten_sach": "To Kill a Mockingbird", "ngay_thao_tac": "22 May 2024", "thao_tac": "Dịch", "tinh_trang": "Đang xử lý", "xem_chi_tiet": "Xem chi tiết"},
+        {"ten_sach": "1984", "ngay_thao_tac": "20 May 2024", "thao_tac": "Sách nói", "tinh_trang": "Đã hoàn thành", "xem_chi_tiet": "Xem chi tiết"},
+        {"ten_sach": "The Great Gatsby", "ngay_thao_tac": "18 May 2024", "thao_tac": "Lưu trữ", "tinh_trang": "Đã huỷ", "xem_chi_tiet": "Xem chi tiết"},
+        {"ten_sach": "Moby Dick", "ngay_thao_tac": "15 May 2024", "thao_tac": "Lưu sách", "tinh_trang": "Không thành công", "xem_chi_tiet": "Xem chi tiết"},
+        {"ten_sach": "War and Peace", "ngay_thao_tac": "10 May 2024", "thao_tac": "Cộng đồng", "tinh_trang": "Đang xử lý", "xem_chi_tiet": "Xem chi tiết"},
+        {"ten_sach": "Pride and Prejudice", "ngay_thao_tac": "08 May 2024", "thao_tac": "Dịch", "tinh_trang": "Đã hoàn thành", "xem_chi_tiet": "Xem chi tiết"},
+        {"ten_sach": "The Catcher in the Rye", "ngay_thao_tac": "05 May 2024", "thao_tac": "Sách nói", "tinh_trang": "Đã huỷ", "xem_chi_tiet": "Xem chi tiết"},
+        {"ten_sach": "The Hobbit", "ngay_thao_tac": "03 May 2024", "thao_tac": "Lưu trữ", "tinh_trang": "Đang xử lý", "xem_chi_tiet": "Xem chi tiết"},
+        {"ten_sach": "Crime and Punishment", "ngay_thao_tac": "01 May 2024", "thao_tac": "Lưu sách", "tinh_trang": "Không thành công", "xem_chi_tiet": "Xem chi tiết"},
+        {"ten_sach": "The Brothers Karamazov", "ngay_thao_tac": "28 April 2024", "thao_tac": "Cộng đồng", "tinh_trang": "Đang xử lý", "xem_chi_tiet": "Xem chi tiết"},
+        {"ten_sach": "Brave New World", "ngay_thao_tac": "25 April 2024", "thao_tac": "Dịch", "tinh_trang": "Đã hoàn thành", "xem_chi_tiet": "Xem chi tiết"},
+        {"ten_sach": "Ulysses", "ngay_thao_tac": "22 April 2024", "thao_tac": "Sách nói", "tinh_trang": "Đã huỷ", "xem_chi_tiet": "Xem chi tiết"},
+        {"ten_sach": "Les Misérables", "ngay_thao_tac": "20 April 2024", "thao_tac": "Lưu trữ", "tinh_trang": "Đang xử lý", "xem_chi_tiet": "Xem chi tiết"},
+        {"ten_sach": "Anna Karenina", "ngay_thao_tac": "18 April 2024", "thao_tac": "Lưu sách", "tinh_trang": "Không thành công", "xem_chi_tiet": "Xem chi tiết"},
+        {"ten_sach": "One Hundred Years of Solitude", "ngay_thao_tac": "15 April 2024", "thao_tac": "Cộng đồng", "tinh_trang": "Đang xử lý", "xem_chi_tiet": "Xem chi tiết"}
+    ]
+    return render_template('dashboard.html', data=data, books=books)
 
 @main_bp.route('/signin')
 def signin():
@@ -174,6 +203,19 @@ def user(identifier=None):
 
 @main_bp.route('/community/books', methods=['GET'])
 def community_books():
+    categories = [
+           {"icon": "computer-office", "name": "Máy tính & Văn phòng"},
+        {"icon": "collectibles-toys", "name": "Đồ sưu tầm & Đồ chơi"},
+        {"icon": "sports-outdoors", "name": "Thể thao & Hoạt động ngoài trời"},
+        {"icon": "electronics", "name": "Điện tử"},
+        {"icon": "tv-projectors", "name": "TV/Máy chiếu"},
+        {"icon": "books", "name": "Sách"},
+        {"icon": "fashion-clothes", "name": "Thời trang/Quần áo"},
+        {"icon": "food-grocery", "name": "Thực phẩm & Hàng tạp hóa"},
+        {"icon": "health-beauty", "name": "Sức khỏe & Sắc đẹp"},
+        {"icon": "painting-hobby", "name": "Hội họa & Sở thích"},
+        {"icon": "music", "name": "Âm nhạc"}
+    ]
     db = current_app.config['FIRESTORE']
     published_books_ref = db.collection('published_books')
     books = []
@@ -185,6 +227,5 @@ def community_books():
         book_data['id'] = doc.id  # Include the document ID
         books.append(book_data)
 
-    return render_template('community-books.html', books=books)
-
+    return render_template('community-books.html', books=books, categories=categories)
 

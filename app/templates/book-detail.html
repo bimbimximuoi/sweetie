@@ -9,226 +9,99 @@
 {% endblock %}
 
 {% block content %}
-<section class="py-8 bg-white md:py-16 dark:bg-gray-900 antialiased">
-    <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
-      <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
-        <div class="shrink-0 max-w-md lg:max-w-lg mx-auto">
-          <img class="w-full dark:hidden" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg" alt="" />
-          <img class="w-full hidden dark:block" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg" alt="" />
-        </div>
-
+<section>
+    <form id="bookForm" enctype="multipart/form-data">
+      <div class="flex gap-14">
+       
         <div class="mt-6 sm:mt-8 lg:mt-0">
-          <h1
-            class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white"
-          >
-            Apple iMac 24" All-In-One Computer, Apple M1, 8GB RAM, 256GB SSD,
-            Mac OS, Pink
-          </h1>
-          <div class="mt-4 sm:items-center sm:gap-4 sm:flex">
-            <p
-              class="text-2xl font-extrabold text-gray-900 sm:text-3xl dark:text-white"
-            >
-              $1,249.99
-            </p>
 
-            <div class="flex items-center gap-2 mt-2 sm:mt-0">
-              <div class="flex items-center gap-1">
-                <svg
-                  class="w-4 h-4 text-yellow-300"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
-                  />
-                </svg>
-                <svg
-                  class="w-4 h-4 text-yellow-300"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
-                  />
-                </svg>
-                <svg
-                  class="w-4 h-4 text-yellow-300"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
-                  />
-                </svg>
-                <svg
-                  class="w-4 h-4 text-yellow-300"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
-                  />
-                </svg>
-                <svg
-                  class="w-4 h-4 text-yellow-300"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
-                  />
-                </svg>
-              </div>
-              <p
-                class="text-sm font-medium leading-none text-gray-500 dark:text-gray-400"
-              >
-                (5.0)
-              </p>
-              <a
-                href="#"
-                class="text-sm font-medium leading-none text-gray-900 underline hover:no-underline dark:text-white"
-              >
-                345 Reviews
-              </a>
-            </div>
-          </div>
+            <h1 class="text-3xl font-bold mb-4 flex gap-4 items-center"><img width="50" height="50" src="{{ url_for('static', filename='images/book.png') }}" alt=""><span class="text-2xl font-semibold">Book Detail: {{ book_data.metadata.title }}</h1>
+            
+                    <div class="col-span-1">
+                        <label for="title" class="block mb-2 font-semibold">Tiêu đề:</label>
+                        <input type="text" id="title" name="title" value="{{ book_data.metadata.title }}" required class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Book Title...">
+            
+                        <label for="authors" class="block mt-4 mb-2 font-semibold">Tác giả:</label>
+                        <input type="text" id="authors" name="authors" value="{{ book_data.metadata.authors | join(', ') }}" required class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Book Authors...">
+            
+                        <label for="subject" class="block mt-4 mb-2 font-semibold">Chủ đề:</label>
+                        <input type="text" id="subject" name="subject" value="{{ book_data.metadata.subject }}" required class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Book Subject ...">
+            
+                        <label for="keywords" class="block mt-4 mb-2 font-semibold">Từ khoá:</label>
+                        <input type="text" id="keywords" name="keywords" value="{{ book_data.metadata.keywords }}" required class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Book Keyword ...">
+            
+                        <label for="public" class="block mt-4 mb-2 font-semibold">Công khai:</label>
+                        <input type="checkbox" id="public" name="public" class="mr-2" {{ 'checked' if book_data.metadata.public else '' }}>
+                        <span>Chia sẻ với cộng đồng</span>
+                    </div>
+
+                    
 
           <div class="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
-            <a
-              href="#"
-              title=""
-              class="flex items-center justify-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-              role="button"
-            >
-              <svg
-                class="w-5 h-5 -ms-2 me-2"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
-                />
-              </svg>
-              Add to favorites
-            </a>
+            <div>
+                
+                <div class="flex gap-4">
+               
+            </div>
+            </div>
+            <button type="button" onclick="saveBook()" id="saveBookBtn" class="flex items-center justify-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                <svg
+                  class="w-5 h-5 -ms-2 me-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
+                  />
+                </svg>
+                Lưu sách
+            </button>
 
-            <a
-              href="#"
-              title=""
-              class="text-white mt-4 sm:mt-0 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 flex items-center justify-center"
-              role="button"
-            >
-              <svg
-                class="w-5 h-5 -ms-2 me-2"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
-                />
-              </svg>
+            <button type="button" onclick="publishBook()" id="publishBookBtn" style="display: none;" class="flex items-center justify-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Công khai sách</button>
+<button type="button" onclick="uploadBook()" id="uploadBookBtn" style="display: none;" class="flex items-center justify-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Lưu lên Cloud</button>
+          
+            <a href="{{ url_for('main_bp.book_translate', book_id=book_data.metadata.id) }}" class="flex items-center justify-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Dịch sách</a>
+            <a href="{{ url_for('main_bp.book_speech', book_id=book_data.metadata.id) }}" class="flex items-center justify-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Sách nói</a>
+            <a href="{{ url_for('main_bp.book_read', book_id=book_data.metadata.id) }}" class="flex items-center justify-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Đọc sách</a>
 
-              Add to cart
-            </a>
+
           </div>
 
           <hr class="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
 
           <p class="mb-6 text-gray-500 dark:text-gray-400">
-            Studio quality three mic array for crystal clear calls and voice
-            recordings. Six-speaker sound system for a remarkably robust and
-            high-quality audio experience. Up to 256GB of ultrafast SSD storage.
+            Khi bạn tải sách lên, bạn đồng ý với tiêu chuẩn và chính sách của app
           </p>
 
           <p class="text-gray-500 dark:text-gray-400">
-            Two Thunderbolt USB 4 ports and up to two USB 3 ports. Ultrafast
-            Wi-Fi 6 and Bluetooth 5.0 wireless. Color matched Magic Mouse with
-            Magic Keyboard or Magic Keyboard with Touch ID.
+            Tránh tải những sách có bản quyền, sách không phù hợp với đạo lý và pháp luật lên mục chia sẽ với cộng đồng
           </p>
         </div>
-      </div>
+
+        <div>
+            {% if book_data.cover_image %}
+                <img src="data:image/jpeg;base64,{{ book_data.cover_image }}" class="object-fit w-[50vw] h-[80vh] rounded-lg">
+            {% else %}
+                <img src="{{ url_for('static', filename='images/book.png') }}" class="object-contain">
+            {% endif %}
     </div>
+
+
+      </div>
+    </form>
   </section>
 
-  
-<div class="container w-full">
-    <h1 class="text-3xl font-bold mb-4 flex gap-4 items-center"><img width="50" height="50" src="{{ url_for('static', filename='images/book.png') }}" alt=""><span class="text-2xl font-semibold">Book Detail: {{ book_data.metadata.title }}</h1>
-    <form id="bookForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 shadow-lg p-6 rounded-lg w-full" enctype="multipart/form-data">
-        <div class="col-span-1">
-            <label for="title" class="block mb-2 font-semibold">Title:</label>
-            <input type="text" id="title" name="title" value="{{ book_data.metadata.title }}" required class="border bg-background-dark rounded p-2 w-full">
 
-            <label for="authors" class="block mt-4 mb-2 font-semibold">Authors:</label>
-            <input type="text" id="authors" name="authors" value="{{ book_data.metadata.authors | join(', ') }}" required class="border bg-background-dark rounded p-2 w-full">
 
-            <label for="subject" class="block mt-4 mb-2 font-semibold">Subject:</label>
-            <input type="text" id="subject" name="subject" value="{{ book_data.metadata.subject }}" required class="border bg-background-dark rounded p-2 w-full">
-
-            <label for="keywords" class="block mt-4 mb-2 font-semibold">Keywords:</label>
-            <input type="text" id="keywords" name="keywords" value="{{ book_data.metadata.keywords }}" required class="border bg-background-dark rounded p-2 w-full">
-
-            <label for="public" class="block mt-4 mb-2 font-semibold">Public:</label>
-            <input type="checkbox" id="public" name="public" class="mr-2" {{ 'checked' if book_data.metadata.public else '' }}>
-            <span>Make this book public</span>
-        </div>
-        <div class="col-span-1 flex flex-col justify-between w-full">
-            <div>
-                {% if book_data.cover_image %}
-                    <img src="data:image/jpeg;base64,{{ book_data.cover_image }}" class="w-full h-64 object-contain mb-4 rounded">
-                {% else %}
-                    <img src="{{ url_for('static', filename='images/book.png') }}" class="w-fit h-64 object-contain mb-4 rounded">
-                {% endif %}
-            </div>
-            <div>
-                <button type="button" onclick="saveBook()" class="bg-background-dark text-background-light font-bold py-2 px-4 rounded w-full mb-2" id="saveBookBtn">Save Book</button>
-                <button type="button" onclick="publishBook()" class="bg-background-dark text-background-light font-bold py-2 px-4 rounded w-full mb-2" id="publishBookBtn" style="display: none;">Publish Book</button>
-                <button type="button" onclick="uploadBook()" class="bg-background-dark text-background-light font-bold py-2 px-4 rounded w-full mb-2" id="uploadBookBtn" style="display: none;">Upload to Storage</button>
-                <div class="flex gap-4">
-                <a href="{{ url_for('main_bp.book_translate', book_id=book_data.metadata.id) }}" class="bg-background-dark text-background-light font-bold py-2 px-4 rounded w-full mb-2 text-center">Translate</a>
-                <a href="{{ url_for('main_bp.book_speech', book_id=book_data.metadata.id) }}" class="bg-background-dark text-background-light font-bold py-2 px-4 rounded w-full mb-2 text-center">Podcast</a>
-                <a href="{{ url_for('main_bp.book_read', book_id=book_data.metadata.id) }}" class="bg-background-dark text-background-light font-bold py-2 px-4 rounded w-full mb-2 text-center">Read Book</a>
-            </div>
-            </div>
-        </div>
-    </form>
-
-    <script>
+   <script>
         let firestoreBookId = "";
         let isSavedToFirestore = false;
 
@@ -282,7 +155,12 @@
                     if (data.success) {
                         firestoreBookId = data.id;
                         isSavedToFirestore = true;
-                        alert('Book saved successfully!');
+                        Swal.fire({
+  title: 'Success!',
+  text: 'Book saved successfuly.',
+  icon: 'success',
+  confirmButtonText: 'Cool'
+})
                         document.getElementById('publishBookBtn').style.display = 'block';
                         document.getElementById('uploadBookBtn').style.display = 'block';
                     } else {
@@ -291,11 +169,21 @@
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('Failed to save the book');
+                    Swal.fire({
+  title: 'Error!',
+  text: 'Failed to save the book.',
+  icon: 'error',
+  confirmButtonText: 'Cool'
+})
                 });
             }).catch(error => {
                 console.error('Error:', error);
-                alert('You need an account to save the book');
+                Swal.fire({
+  title: 'Error!',
+  text: 'You need an account to save book.',
+  icon: 'error',
+  confirmButtonText: 'Cool'
+})
             });
         }
 
@@ -326,15 +214,31 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        alert('Book published successfully!');
+                        Swal.fire({
+  title: 'Error!',
+  text: 'Book publish successfully.',
+  icon: 'error',
+  confirmButtonText: 'Cool'
+})
                         window.location.href = "{{ url_for('main_bp.book_detail', book_id='') }}" + firestoreBookId;
                     } else {
-                        alert('Failed to publish the book: ' + data.error);
+                        Swal.fire({
+  title: 'Error!',
+  text: 'Failed to publish the book: ' + data.error,
+  icon: 'error',
+  confirmButtonText: 'Cool'
+})
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
                     alert('Failed to publish the book');
+                    Swal.fire({
+  title: 'Error!',
+  text: 'Failed to publish the book: ',
+  icon: 'error',
+  confirmButtonText: 'Cool'
+})
                 });
             }).catch(error => {
                 console.error('Error:', error);
@@ -357,14 +261,24 @@
                 .then(response => response.json())
                 .then(uploadData => {
                     if (uploadData.success) {
-                        alert('Book uploaded to storage successfully!');
+                        Swal.fire({
+  title: 'Error!',
+  text: 'Book uploaded to storage successfully!',
+  icon: 'error',
+  confirmButtonText: 'Cool'
+})
                     } else {
                         alert('Failed to upload the book: ' + uploadData.error);
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('Failed to upload the book to storage');
+                    Swal.fire({
+  title: 'Error!',
+  text: 'Failed to upload the book to storage!',
+  icon: 'error',
+  confirmButtonText: 'Cool'
+})
                 });
             }).catch(error => {
                 console.error('Error:', error);
@@ -372,5 +286,4 @@
             });
         }
     </script>
-</div>
 {% endblock %}

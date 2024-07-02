@@ -9,9 +9,9 @@
 {% endblock %}
 
 {% block content %}
-<main class="container mx-auto p-6 rounded-lg shadow-lg">
+<main class="rounded-lg">
     
-    <h1 class="text-3xl font-bold mb-4 flex gap-4 items-center"><img width="50" height="50" src="{{ url_for('static', filename='images/speech.png') }}" alt=""><span class="text-2xl font-semibold">Podcast Book: {{ book_data.metadata.title }}</h1>
+    <h1 class="text-3xl font-bold mb-4 flex gap-4 items-center"><img width="50" height="50" src="{{ url_for('static', filename='images/speech.png') }}" alt=""><span class="text-2xl font-semibold">Sách nói: {{ book_data.metadata.title }}</h1>
     <form id="speechForm" class="mb-4">
         <input type="hidden" name="book_data" value="{{ book_data.texts }}">
         <button type="button" onclick="submitSpeechForm()" class="bg-background-dark hover:bg-secondary text-background-light hover:text-background-dark font-bold py-2 px-4 rounded mt-4 inline-block">Generate Speech</button>
@@ -26,7 +26,8 @@
             <source id="audioSource" src="" type="audio/wav">
             Your browser does not support the audio element.
         </audio>
-        <a id="downloadButton" href="#" download="output.wav" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">Download Audio</a>
+        <a id="downloadButton" href="#" download="output.wav" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">Tải File Audio</a>
+        <a id="downloadButton" href="#" download="output.wav" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">Lưu trữ Đám mây</a>
     </div>
 
     <div class="mt-6">

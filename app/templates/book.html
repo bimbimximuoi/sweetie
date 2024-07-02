@@ -3,19 +3,16 @@
 {% block title %}Upload{% endblock %}
 
 {% block breadcrumbs %}
-<a href="{{ url_for('main_bp.book') }}" class="hover:text-background-light">Books</a>
+<a href="{{ url_for('main_bp.book') }}" class="text-text-light">Books</a>
 <span class="mx-2 text-gray-600">/</span>
-<a href="{{ url_for('main_bp.book_upload') }}" class="hover:text-background-light">Upload<a>
+<a href="{{ url_for('main_bp.book_upload') }}" class="text-text-light">Upload<a>
 {% endblock %}
 
 {% block content %}
 <main class="p-4 w-full min-h-[80vh] flex items-center">
-    
-
-
 
     <section class="bg-background-dark/5 w-fit rounded-lg mx-auto my-auto dark:bg-gray-900">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+        <form id="upload-form" class="p-24 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
             <a href="#" class="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
                 <span class="text-xs bg-primary rounded-full text-white px-4 py-1.5 mr-3">Trợ giúp</span> <span class="text-sm font-medium">Nếu có vấn đề, báo cáo ở đây</span> 
                 <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
@@ -27,36 +24,42 @@
 
             <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                 <Button type="button" onclick={submitUploadForm()} >
-                    <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                    <a class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
                         Đăng sách
                         <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </a>
                 </Button>
-                <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                    <svg class="mr-2 -ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path></svg>
+                <a class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                    <!-- <svg class="mr-2 -ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path></svg> -->
                     Gửi trực tiếp
                 </a>  
+                {% include 'signin-button.html' %}
+            </div>
+            <div id="progress-container" class="mt-8 hidden">
+                <p class="text-lg font-medium text-gray-700">Cập nhật:</p>
+                <div class="w-full bg-gray-200 rounded-full h-4 mt-2">
+                    <div id="progress-bar" class="bg-primary h-4 rounded-full text-center text-xs font-medium text-white leading-none" style="width: 0%"></div>
+                </div>
             </div>
             <div class="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
-                <span class="font-semibold text-gray-400 uppercase">FEATURED IN</span>
+                <span class="font-semibold text-gray-400 uppercase">TÍNH NĂNG</span>
                 <div class="flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between">
                     <div class="flex items-center text-3xl font-bold">
                         <img src="../static/images/translate.png" class="h-36  p-8" />
-                        <p>Translation</p>
+                        <p>Dịch sách</p>
                     </div>
                     <div class="flex items-center text-3xl font-bold">
                         <img src="../static/images/speech.png" class="h-36  p-8" />
-                        <p>Podcast</p>
+                        <p>Sách nói</p>
                     </div>
                     <div class="flex items-center text-3xl font-bold">
                         <img src="../static/images/storage.png" class="h-36 p-8" />
-                        <p>Storage</p>
+                        <p>Lưu trữ</p>
                     </div>
                 </div>
             </div> 
 
-            {% include 'signin-button.html' %}
-        </div>
+        </>
     </section>
 
 
@@ -71,15 +74,21 @@
     socket.on('progress', (data) => {
         const progressBar = document.getElementById('progress-bar');
         progressBar.style.width = `${data.progress}%`;
-        progressBar.textContent = `${data.progress}%`;
+        // progressBar.textContent = `${data.progress}%`;
     });
 
-    function submitUploadForm() {
+    function submitUploadForm() {   
+
         const form = document.getElementById('upload-form');
         const fileInput = document.getElementById('file');
 
         if (!fileInput.files.length) {
-            alert('Please select a file to upload.');
+            Swal.fire({
+            title: 'Error!',
+            text: 'Select a file to upload',
+            icon: 'error',
+            confirmButtonText: 'Cool'
+            })
             return;
         }
 
@@ -100,7 +109,12 @@
         .then(response => response.json())
         .then(data => {
             if (data.error) {
-                alert('Failed to upload the book: ' + data.error);
+                Swal.fire({
+                title: 'Error!',
+                text: 'Failed to upload the book: ' + data.error,
+                icon: 'error',
+                confirmButtonText: 'Cool'
+                })
             } else {
                 // Optionally, redirect to another page or update the UI
                 window.location.href = "{{ url_for('main_bp.book_detail') }}";
@@ -109,7 +123,12 @@
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('Failed to upload the book.');
+            Swal.fire({
+  title: 'Error!',
+  text: 'Failed to upload the book.',
+  icon: 'error',
+  confirmButtonText: 'Cool'
+})
             document.getElementById('progress-container').classList.add('hidden');
         });
 
@@ -118,3 +137,11 @@
     }
 </script>
 {% endblock %}
+
+
+
+
+
+
+
+

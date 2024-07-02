@@ -1,0 +1,7 @@
+Dockerfile
+README.md
+* .рус
+* -pyo
+*-pyd
+__pycache__
+.pytest_cachel

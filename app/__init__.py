@@ -4,11 +4,12 @@ import firebase_admin
 from firebase_admin import credentials, firestore, storage
 from flask_session import Session
 from flask_socketio import SocketIO
-
+from flask_cors import CORS
 socketio = SocketIO()
 
 def create_app():
     app = Flask(__name__)
+    CORS(app)
     app.secret_key = os.urandom(24)
 
     

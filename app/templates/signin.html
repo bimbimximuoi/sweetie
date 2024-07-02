@@ -1,12 +1,10 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
 <html>
-<head>
-    <title>Sign In</title>
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/tailwind.css') }}">
 
     <script>
         // Your web app's Firebase configuration
@@ -21,16 +19,14 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
     </script>
-</head>
+
 <body>
 
-    <div class="flex w-screen shadow-lg rounded-lg overflow-hidden justify-between">
-        <img src="../static/images//logo.png" class="basis-1/2 bg-background-dark p-8" />
-        <main class="basis-1/2   flex justify-center items-center mx-auto">
+        <main class="w- h-[80vh] flex justify-center items-center mx-auto">
             <div>
 
-            <h2 class="text-3xl font-bold text-center mb-4">Login</h2>
-            <p class="text-center text-gray-600 mb-6">Enter your email below to login to your account</p>
+            <h2 class="text-3xl font-bold text-center mb-4">Đăng nhập</h2>
+            <p class="text-center text-gray-600 mb-6">Nhập Thông tin và đăng nhập vào Sweetie</p>
             <form action="#" method="POST">
                 <div class="mb-4">
                     <label for="email" class="block text-gray-700">Email</label>
@@ -39,16 +35,16 @@
                 <div class="mb-4">
                     <label for="password" class="block text-gray-700">Password</label>
                     <input type="password" id="password" name="password" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500" required>
-                    <a href="#" class="text-sm text-gray-600 hover:underline mt-2 inline-block">Forgot your password?</a>
+                    <a href="#" class="text-sm text-gray-600 hover:underline mt-2 inline-block">Quên mật khẩu?</a>
                 </div>
                 <div class="mb-4">
                     <button type="submit" class="w-full px-4 py-2 bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none">Login</button>
                 </div>
                 <div class="mb-4">
-                    <button type="button" id="googleSignIn" class="w-full px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none">Login with Google</button>
+                    <button type="button" id="googleSignIn" class="w-full px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none">Đăng nhập với Google</button>
                 </div>
             </form>
-            <p class="text-center text-gray-600">Don't have an account? <a href="#" class="text-blue-600 hover:underline">Sign up</a></p>
+            <p class="text-center text-gray-600">Không có tài khoản? <a href="#" class="text-blue-600 hover:underline">Đăng ký</a></p>
         </div>
         </>
     </div>
@@ -95,3 +91,4 @@
     </script>
 </body>
 </html>
+{% endblock %}

@@ -16,13 +16,13 @@
             <label for="title" class="block mb-2 font-semibold">Title:</label>
             <input type="text" id="title" name="title" value="{{ book_data.metadata.title }}" required class="border border-gray-300 rounded p-2 w-full">
 
-            <label for="authors" class="block mt-4 mb-2 font-semibold">Authors:</label>
+            <label for="authors" class="block mt-4 mb-2 font-semibold">Tác giả:</label>
             <input type="text" id="authors" name="authors" value="{{ book_data.metadata.authors | join(', ') }}" required class="border border-gray-300 rounded p-2 w-full">
 
             <label for="subject" class="block mt-4 mb-2 font-semibold">Subject:</label>
             <input type="text" id="subject" name="subject" value="{{ book_data.metadata.subject }}" required class="border border-gray-300 rounded p-2 w-full">
 
-            <label for="keywords" class="block mt-4 mb-2 font-semibold">Keywords:</label>
+            <label for="keywords" class="block mt-4 mb-2 font-semibold">Từ khoá:</label>
             <input type="text" id="keywords" name="keywords" value="{{ book_data.metadata.keywords }}" required class="border border-gray-300 rounded p-2 w-full">
 
             <label for="public" class="block mt-4 mb-2 font-semibold">Public:</label>
@@ -51,9 +51,9 @@
         const formData = new FormData(form);
         const bookData = {
             title: formData.get('title'),
-            authors: formData.get('authors').split(', '),
+            Tác giả: formData.get('authors').split(', '),
             subject: formData.get('subject'),
-            keywords: formData.get('keywords'),
+            Từ khoá: formData.get('keywords'),
             public: formData.get('public') !== null,
             cover_image: "{{ book_data.cover_image }}",
             texts: {{ book_data.texts | tojson }},

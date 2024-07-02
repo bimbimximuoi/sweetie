@@ -14,70 +14,323 @@
     <div>
         <!-- Page Content -->
         <div>
+        
+
             <!-- Orders Section -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-4 bg-background-light/50">
-                <div class="p-4 rounded-lg shadow">
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-xl font-medium ">This Week</h3>
-                        <div class="text-2xl font-bold ">12 books</div>
-                    </div>
-                    <div class="text-green-500">+15% from last week</div>
-                </div>
-                <div class="p-4 rounded-lg shadow">
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-xl font-medium ">This Month</h3>
-                        <div class="text-2xl font-bold ">32 books</div>
-                    </div>
-                    <div class="text-green-500">+10% from last month</div>
-                </div>
-            </div>
+              <div class="p-4 rounded-lg shadow">
+                  <div class="flex justify-between items-center">
+                      <h3 class="text-xl font-medium ">Tuần này</h3>
+                      <div class="text-2xl font-bold ">12 sách</div>
+                  </div>
+                  <div class="text-green-500">+15% so với tuần trước</div>
+              </div>
+              <div class="p-4 rounded-lg shadow">
+                  <div class="flex justify-between items-center">
+                      <h3 class="text-xl font-medium ">Tháng này</h3>
+                      <div class="text-2xl font-bold ">32 sách</div>
+                  </div>
+                  <div class="text-green-500">+10% so với tháng trước</div>
+              </div>
+          </div>
             
             <!-- Orders Table -->
-            <div class="shadow overflow-hidden sm:rounded-lg bg-background-light/50">
-                <div class="px-4 py-5 sm:px-6">
-                    <h3 class="text-lg leading-6 font-medium ">Books</h3>
-                    <p class="mt-1 max-w-2xl text-sm ">Recent books requested by you.</p>
-                </div>
-                <div class="border-t border-gray-200">
-                    <dl>
-                        <div class="px-4 py-5 sm:grid sm:grid-cols-4 sm:gap-8 sm:px-6">
-                            <dt class="text-sm font-medium ">Title</dt>
-                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-3">The Great Adventure</dd>
+                    <!-- Start coding here -->
+                    <div class="bg-background-light/50 dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+                        <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
+                            <div class="w-full md:w-1/2">
+                                <form class="flex items-center">
+                                    <label for="simple-search" class="sr-only">Tìm kiếm</label>
+                                    <div class="relative w-full">
+                                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Tìm kiếm" required="">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
+                                <button type="button" class="flex items-center justify-center text-white bg-primary hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary focus:outline-none dark:focus:ring-primary-800">
+                                    <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path clip-rule="evenodd" fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
+                                    </svg>
+                                    Thêm sách
+                                </button>
+                                <div class="flex items-center space-x-3 w-full md:w-auto">
+                                    <button id="actionsDropdownButton" data-dropdown-toggle="actionsDropdown" class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-background-light/50 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">
+                                        <svg class="-ml-1 mr-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <path clip-rule="evenodd" fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                                        </svg>
+                                        Tác vụ
+                                    </button>
+                                    <div id="actionsDropdown" class="hidden z-10 w-44 bg-background-light/50 rounded divide-y divide-gray-100 shadow dark:divide-gray-600">
+                                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="actionsDropdownButton">
+                                            <li>
+                                                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mass Edit</a>
+                                            </li>
+                                        </ul>
+                                        <div class="py-1">
+                                            <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete all</a>
+                                        </div>
+                                    </div>
+                                    <button id="filterDropdownButton" data-dropdown-toggle="filterDropdown" class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-background-light/50 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-4 w-4 mr-2 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
+                                        </svg>
+                                        Bộ lọc
+                                        <svg class="-mr-1 ml-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <path clip-rule="evenodd" fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                                        </svg>
+                                    </button>
+                                    <div id="filterDropdown" class="z-10 hidden w-48 p-3 bg-background-light/50 rounded-lg shadow">
+                                        <h6 class="mb-3 text-sm font-medium text-gray-900 dark:text-white">Choose brand</h6>
+                                        <ul class="space-y-2 text-sm" aria-labelledby="filterDropdownButton">
+                                            <li class="flex items-center">
+                                                <input id="apple" type="checkbox" value="" class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                <label for="apple" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Apple (56)</label>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <input id="fitbit" type="checkbox" value="" class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                <label for="fitbit" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Microsoft (16)</label>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <input id="razor" type="checkbox" value="" class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                <label for="razor" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Razor (49)</label>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <input id="nikon" type="checkbox" value="" class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                <label for="nikon" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Nikon (12)</label>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <input id="benq" type="checkbox" value="" class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                <label for="benq" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">BenQ (74)</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="px-4 py-5 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium ">Author</dt>
-                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-3">John Doe</dd>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:text-gray-400">
+                                    <tr>
+                                        <th scope="col" class="px-4 py-3">Tên sách</th>
+                                        <th scope="col" class="px-4 py-3">Chủ đề</th>
+                                        <th scope="col" class="px-4 py-3">Ngôn ngữ</th>
+                                        <th scope="col" class="px-4 py-3">Số trang</th>
+                                        <th scope="col" class="px-4 py-3">Số từ</th>
+                                        <th scope="col" class="px-4 py-3">
+                                            <span class="sr-only">Actions</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  {% for book in books %}
+                                  <tr class="border-b dark:border-gray-700">
+                                      <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white text-start flex justify-start">{{ book.ten_sach }}</th>
+                                      <td class="px-4 py-3">{{ book.chu_de }}</td>
+                                      <td class="px-4 py-3">{{ book.ngon_ngu }}</td>
+                                      <td class="px-4 py-3">{{ book.so_trang }}</td>
+                                      <td class="px-4 py-3">{{ book.so_tu }}</td>
+                                      <td class="px-4 py-3 flex items-center justify-end">
+                                          <button id="{{ book.ten_sach | replace(' ', '-')}}-dropdown-button" data-dropdown-toggle="{{ book.ten_sach | replace(' ', '-')}}-dropdown" class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100" type="button">
+                                              <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                  <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                                              </svg>
+                                          </button>
+                                          <div id="{{ book.ten_sach | replace(' ', '-')}}-dropdown" class="hidden z-10 w-44 bg-background-light/50 rounded divide-y divide-gray-100 shadow dark:divide-gray-600">
+                                              <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="{{ book.ten_sach | replace(' ', '-')}}-dropdown-button">
+                                                  <li>
+                                                      <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Show</a>
+                                                  </li>
+                                                  <li>
+                                                      <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                                                  </li>
+                                              </ul>
+                                              <div class="py-1">
+                                                  <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</a>
+                                              </div>
+                                          </div>
+                                      </td>
+                                  </tr>
+                                  {% endfor %}
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="px-4 py-5 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium ">Genre</dt>
-                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-3">Adventure</dd>
-                        </div>
-                        <div class="px-4 py-5 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium ">Publication Date</dt>
-                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-3">2023-01-15</dd>
-                        </div>
-                        <div class="px-4 py-5 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium ">ISBN</dt>
-                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-3">978-3-16-148410-0</dd>
-                        </div>
-                        <div class="px-4 py-5 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium ">Pages</dt>
-                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-3">320</dd>
-                        </div>
-                        <div class="px-4 py-5 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium ">Publisher</dt>
-                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-3">Adventure Books Inc.</dd>
-                        </div>
-                        <div class="px-4 py-5 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium ">Language</dt>
-                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-3">English</dd>
-                        </div>
-                    </dl>
-                    
-                </div>
-            </div>
+                        <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4" aria-label="Table navigation">
+                            <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
+                                Hiển thị
+                                <span class="font-semibold text-gray-900 dark:text-white">1-10</span>
+                                Trên
+                                <span class="font-semibold text-gray-900 dark:text-white">1000</span>
+                            </span>
+                            <ul class="inline-flex items-stretch -space-x-px">
+                                <li>
+                                    <a href="#" class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-background-light/50 rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                        <span class="sr-only">Trước</span>
+                                        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-background-light/50 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-background-light/50 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+                                </li>
+                                <li>
+                                    <a href="#" aria-current="page" class="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-primary-600 bg-primary-50 border border-primary-300 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:text-white">3</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-background-light/50 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-background-light/50 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">100</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-background-light/50 rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                        <span class="sr-only">Next</span>
+                                        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
 
-            <!-- More Orders... -->
+                   <!-- More Orders... -->
+                   <section >
+                    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+                        <!-- <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+                            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Sử dụng AI trong các tính năng</h2>
+                            <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+                        </div> -->
+                        <div class="flex items-start gap-8">
+                            <!-- Pricing Card -->
+                            <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-background-light/50 rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                                <h3 class="mb-4 text-2xl font-semibold">Dịch sách</h3>
+                                <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Dịch vụ dịch sách với AI MarianMT.</p>
+                                <img src="../static/images/translate.png" width="200" height="200" class="mx-auto" />
+                                <div class="flex justify-center items-baseline my-8">
+                                    <span class="mr-2 text-5xl font-extrabold">$29</span>
+                                    <span class="text-gray-500 dark:text-gray-400">/month</span>
+                                </div>
+                                <!-- List -->
+                                <ul role="list" class="mb-8 space-y-4 text-left">
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>Individual configuration</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>No setup, or hidden fees</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>Team size: <span class="font-semibold">1 developer</span></span>
+                                    </li>
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>Premium support: <span class="font-semibold">6 months</span></span>
+                                    </li>
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>Free updates: <span class="font-semibold">6 months</span></span>
+                                    </li>
+                                </ul>
+                                <a href="#" class="text-white bg-primary-600 hover:bg-primary focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">Get started</a>
+                            </div>
+                            <!-- Pricing Card -->
+                            <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-background-light/50 rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                                <h3 class="mb-4 text-2xl font-semibold">Sách nói</h3>
+                                <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Công nghệ Text To Speech lấy giọng nói với AI Coqui.</p>
+                                <img src="../static/images/speech.png" width="200" height="200" class="mx-auto" />
+                                <div class="flex justify-center items-baseline my-8">
+                                    <span class="mr-2 text-5xl font-extrabold">$99</span>
+                                    <span class="text-gray-500 dark:text-gray-400">/month</span>
+                                </div>
+                                <!-- List -->
+                                <ul role="list" class="mb-8 space-y-4 text-left">
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>Individual configuration</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>No setup, or hidden fees</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>Team size: <span class="font-semibold">10 developers</span></span>
+                                    </li>
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>Premium support: <span class="font-semibold">24 months</span></span>
+                                    </li>
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>Free updates: <span class="font-semibold">24 months</span></span>
+                                    </li>
+                                </ul>
+                                <a href="#" class="text-white bg-primary-600 hover:bg-primary focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">Get started</a>
+                            </div>
+                            <!-- Pricing Card -->
+                            <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-background-light/50 rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                                <h3 class="mb-4 text-2xl font-semibold">Lưu trữ</h3>
+                                <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Lưu trữ File và nội dung sách trên Đám mây.</p>
+                                <img src="../static/images/storage.png" width="200" height="200" class="mx-auto" />
+                                <div class="flex justify-center items-baseline my-8">
+                                    <span class="mr-2 text-5xl font-extrabold">$499</span>
+                                    <span class="text-gray-500 dark:text-gray-400">/month</span>
+                                </div>
+                                <!-- List -->
+                                <ul role="list" class="mb-8 space-y-4 text-left">
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>Individual configuration</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>No setup, or hidden fees</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>Team size: <span class="font-semibold">100+ developers</span></span>
+                                    </li>
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>Premium support: <span class="font-semibold">36 months</span></span>
+                                    </li>
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>Free updates: <span class="font-semibold">36 months</span></span>
+                                    </li>
+                                </ul>
+                                <a href="#" class="text-white bg-primary-600 hover:bg-primary focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">Get started</a>
+                            </div>
+                        </div>
+                    </div>
+                  </section>
+         
         </div>
     </div>
 
@@ -90,315 +343,73 @@
     <div class="shadow overflow-hidden sm:rounded-lg bg-background-light/50 p-8">
       <div class="mx-auto max-w-5xl">
         <div class="gap-4 lg:flex lg:items-center lg:justify-between">
-          <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">My refunds</h2>
+          <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">Lịch sử dữ liệu</h2>
   
           <div class="mt-6 gap-4 space-y-4 sm:flex sm:items-center sm:space-y-0 lg:mt-0 lg:justify-end">
             <div>
               <label for="order-type" class="sr-only mb-2 block text-sm font-medium text-gray-900 dark:text-white">Select order type</label>
-              <select id="order-type" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:w-[144px]">
-                <option selected>All orders</option>
+              <select id="order-type" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:w-[144px]">
+                <option selected>Các thao tác</option>
                 <option value="ongoing">Ongoing</option>
                 <option value="completed">Completed</option>
                 <option value="denied">Denied</option>
               </select>
             </div>
   
-            <span class="inline-block text-gray-500 dark:text-gray-400"> from </span>
+            <span class="inline-block text-gray-500 dark:text-gray-400"> Trong </span>
   
             <div>
               <label for="date" class="sr-only mb-2 block text-sm font-medium text-gray-900 dark:text-white">Select date</label>
-              <select id="date" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:w-[144px]">
-                <option selected>this week</option>
+              <select id="date" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:w-[144px]">
+                <option selected>Tuần này</option>
                 <option value="this month">this month</option>
                 <option value="last 3 months">the last 3 months</option>
                 <option value="lats 6 months">the last 6 months</option>
                 <option value="this year">this year</option>
               </select>
             </div>
-  
-            <button type="button" class="w-full rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300   dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 sm:w-auto">Add return request</button>
+
           </div>
         </div>
   
         <div class="mt-6 flow-root sm:mt-8">
-          <div class="divide-y divide-gray-200 dark:divide-gray-700">
-            <div class="relative grid grid-cols-2 gap-4 py-6 sm:grid-cols-4 lg:grid-cols-5">
+          {% for item in data %}
+          <div class="relative grid grid-cols-2 gap-4 py-6 sm:grid-cols-4 lg:grid-cols-5">
               <div class="col-span-2 content-center sm:col-span-4 lg:col-span-1">
-                <a href="#" class="text-base font-semibold text-gray-900 hover:underline dark:text-white">#FWB127364372</a>
+                  <a href="#" class="text-base font-semibold text-gray-900 hover:underline dark:text-white">{{ item.ten_sach }}</a>
               </div>
-  
               <div class="content-center">
-                <div class="flex items-center gap-2">
-                  <svg class="h-4 w-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z" />
-                  </svg>
-                  <p class="text-sm font-medium text-gray-500 dark:text-gray-400">22 May 2024</p>
-                </div>
+                  <div class="flex items-center gap-2">
+                      <svg class="h-4 w-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                      </svg>
+                      <p class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ item.ngay_thao_tac }}</p>
+                  </div>
               </div>
-  
               <div class="content-center">
-                <div class="flex items-center justify-end gap-2 sm:justify-start">
-                  <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-medium text-gray-900 dark:text-white">Reason</span>: Missing parts</p>
-                </div>
+                  <div class="flex items-center justify-end gap-2 sm:justify-start">
+                      <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-medium text-gray-900 dark:text-white">Thao tác</span>: {{ item.thao_tac }}</p>
+                  </div>
               </div>
-  
               <div class="absolute right-0 top-7 content-center sm:relative sm:right-auto sm:top-auto">
-                <span class="inline-flex items-center rounded bg-primary-100 px-2.5 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300">
-                  <svg class="me-1 h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.5 4h-13m13 16h-13M8 20v-3.333a2 2 0 0 1 .4-1.2L10 12.6a1 1 0 0 0 0-1.2L8.4 8.533a2 2 0 0 1-.4-1.2V4h8v3.333a2 2 0 0 1-.4 1.2L13.957 11.4a1 1 0 0 0 0 1.2l1.643 2.867a2 2 0 0 1 .4 1.2V20H8Z" />
-                  </svg>
-                  Ongoing
-                </span>
+                  <span class="inline-flex items-center rounded bg-primary-100 px-2.5 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300">
+                      <svg class="me-1 h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.5 4h-13m13 16h-13M8 20v-3.333a2 2 0 0 1 .4-1.2L10 12.6a1 1 0 0 0 0-1.2L8.4 8.533a2 2 0 0 1-.4-1.2V4h8v3.333a2 2 0 0 1-.4 1.2L13.957 11.4a1 1 0 0 0 0 1.2l1.643 2.867a2 2 0 0 1 .4 1.2V20H8Z"/>
+                      </svg>
+                      {{ item.tinh_trang }}
+                  </span>
               </div>
-  
               <div class="col-span-2 content-center sm:col-span-1 sm:justify-self-end">
-                <button type="button" class="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 sm:w-auto">View details</button>
+                  <button type="button" class="w-full rounded-lg border border-gray-200 bg-background-light/50 px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 sm:w-auto">{{ item.xem_chi_tiet }}</button>
               </div>
-            </div>
-  
-            <div class="relative grid grid-cols-2 gap-4 py-6 sm:grid-cols-4 lg:grid-cols-5">
-              <div class="col-span-2 content-center sm:col-span-4 lg:col-span-1">
-                <a href="#" class="text-base font-semibold text-gray-900 hover:underline dark:text-white">#FWB746253940</a>
-              </div>
-  
-              <div class="content-center">
-                <div class="flex items-center gap-2">
-                  <svg class="h-4 w-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z" />
-                  </svg>
-                  <p class="text-sm font-medium text-gray-500 dark:text-gray-400">06 April 2024</p>
-                </div>
-              </div>
-  
-              <div class="content-center">
-                <div class="flex items-center justify-end gap-2 sm:justify-start">
-                  <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-medium text-gray-900 dark:text-white">Reason</span>: Wrong item</p>
-                </div>
-              </div>
-  
-              <div class="absolute right-0 top-7 content-center sm:relative sm:right-auto sm:top-auto">
-                <span class="  inline-flex items-center rounded bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
-                  <svg class="me-1 h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5" />
-                  </svg>
-                  Completed
-                </span>
-              </div>
-  
-              <div class="col-span-2 content-center sm:col-span-1 sm:justify-self-end">
-                <button type="button" class="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 sm:w-auto">View details</button>
-              </div>
-            </div>
-  
-            <div class="relative grid grid-cols-2 gap-4 py-6 sm:grid-cols-4 lg:grid-cols-5">
-              <div class="col-span-2 content-center sm:col-span-4 lg:col-span-1">
-                <a href="#" class="text-base font-semibold text-gray-900 hover:underline dark:text-white">#FWB453648693</a>
-              </div>
-  
-              <div class="content-center">
-                <div class="flex items-center gap-2">
-                  <svg class="h-4 w-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z" />
-                  </svg>
-                  <p class="text-sm font-medium text-gray-500 dark:text-gray-400">24 March 2024</p>
-                </div>
-              </div>
-  
-              <div class="content-center">
-                <div class="flex items-center justify-end gap-2 sm:justify-start">
-                  <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-medium text-gray-900 dark:text-white">Reason</span>: Defective item</p>
-                </div>
-              </div>
-  
-              <div class="absolute right-0 top-7 content-center sm:relative sm:right-auto sm:top-auto">
-                <span class=" inline-flex items-center rounded bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800 dark:bg-red-900 dark:text-red-300">
-                  <svg class="me-1 h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
-                  </svg>
-                  Denied
-                </span>
-              </div>
-  
-              <div class="col-span-2 content-center sm:col-span-1 sm:justify-self-end">
-                <button type="button" class="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 sm:w-auto">View details</button>
-              </div>
-            </div>
-  
-            <div class="relative grid grid-cols-2 gap-4 py-6 sm:grid-cols-4 lg:grid-cols-5">
-              <div class="col-span-2 content-center sm:col-span-4 lg:col-span-1">
-                <a href="#" class="text-base font-semibold text-gray-900 hover:underline dark:text-white">#FWB234826346</a>
-              </div>
-  
-              <div class="content-center">
-                <div class="flex items-center gap-2">
-                  <svg class="h-4 w-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z" />
-                  </svg>
-                  <p class="text-sm font-medium text-gray-500 dark:text-gray-400">24 February 2024</p>
-                </div>
-              </div>
-  
-              <div class="content-center">
-                <div class="flex items-center justify-end gap-2 sm:justify-start">
-                  <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-medium text-gray-900 dark:text-white">Reason</span>: Color mismatch</p>
-                </div>
-              </div>
-  
-              <div class="absolute right-0 top-7 content-center sm:relative sm:right-auto sm:top-auto">
-                <span class="  inline-flex items-center rounded bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
-                  <svg class="me-1 h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5" />
-                  </svg>
-                  Completed
-                </span>
-              </div>
-  
-              <div class="col-span-2 content-center sm:col-span-1 sm:justify-self-end">
-                <button type="button" class="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 sm:w-auto">View details</button>
-              </div>
-            </div>
-            <div class="relative grid grid-cols-2 gap-4 py-6 sm:grid-cols-4 lg:grid-cols-5">
-              <div class="col-span-2 content-center sm:col-span-4 lg:col-span-1">
-                <a href="#" class="text-base font-semibold text-gray-900 hover:underline dark:text-white">#FWB127364372</a>
-              </div>
-  
-              <div class="content-center">
-                <div class="flex items-center gap-2">
-                  <svg class="h-4 w-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z" />
-                  </svg>
-                  <p class="text-sm font-medium text-gray-500 dark:text-gray-400">12 April 2024</p>
-                </div>
-              </div>
-  
-              <div class="content-center">
-                <div class="flex items-center justify-end gap-2 sm:justify-start">
-                  <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-medium text-gray-900 dark:text-white">Reason</span>: Missing parts</p>
-                </div>
-              </div>
-  
-              <div class="absolute right-0 top-7 content-center sm:relative sm:right-auto sm:top-auto">
-                <span class="inline-flex items-center rounded bg-primary-100 px-2.5 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300">
-                  <svg class="me-1 h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.5 4h-13m13 16h-13M8 20v-3.333a2 2 0 0 1 .4-1.2L10 12.6a1 1 0 0 0 0-1.2L8.4 8.533a2 2 0 0 1-.4-1.2V4h8v3.333a2 2 0 0 1-.4 1.2L13.957 11.4a1 1 0 0 0 0 1.2l1.643 2.867a2 2 0 0 1 .4 1.2V20H8Z" />
-                  </svg>
-                  Ongoing
-                </span>
-              </div>
-  
-              <div class="col-span-2 content-center sm:col-span-1 sm:justify-self-end">
-                <button type="button" class="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 sm:w-auto">View details</button>
-              </div>
-            </div>
-  
-            <div class="relative grid grid-cols-2 gap-4 py-6 sm:grid-cols-4 lg:grid-cols-5">
-              <div class="col-span-2 content-center sm:col-span-4 lg:col-span-1">
-                <a href="#" class="text-base font-semibold text-gray-900 hover:underline dark:text-white">#FWB746253940</a>
-              </div>
-  
-              <div class="content-center">
-                <div class="flex items-center gap-2">
-                  <svg class="h-4 w-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z" />
-                  </svg>
-                  <p class="text-sm font-medium text-gray-500 dark:text-gray-400">30 April 2024</p>
-                </div>
-              </div>
-  
-              <div class="content-center">
-                <div class="flex items-center justify-end gap-2 sm:justify-start">
-                  <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-medium text-gray-900 dark:text-white">Reason</span>: Wrong item</p>
-                </div>
-              </div>
-  
-              <div class="absolute right-0 top-7 content-center sm:relative sm:right-auto sm:top-auto">
-                <span class="  inline-flex items-center rounded bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
-                  <svg class="me-1 h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5" />
-                  </svg>
-                  Completed
-                </span>
-              </div>
-  
-              <div class="col-span-2 content-center sm:col-span-1 sm:justify-self-end">
-                <button type="button" class="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 sm:w-auto">View details</button>
-              </div>
-            </div>
-  
-            <div class="relative grid grid-cols-2 gap-4 py-6 sm:grid-cols-4 lg:grid-cols-5">
-              <div class="col-span-2 content-center sm:col-span-4 lg:col-span-1">
-                <a href="#" class="text-base font-semibold text-gray-900 hover:underline dark:text-white">#FWB453648693</a>
-              </div>
-  
-              <div class="content-center">
-                <div class="flex items-center gap-2">
-                  <svg class="h-4 w-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z" />
-                  </svg>
-                  <p class="text-sm font-medium text-gray-500 dark:text-gray-400">12 May 2024</p>
-                </div>
-              </div>
-  
-              <div class="content-center">
-                <div class="flex items-center justify-end gap-2 sm:justify-start">
-                  <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-medium text-gray-900 dark:text-white">Reason</span>: Defective item</p>
-                </div>
-              </div>
-  
-              <div class="absolute right-0 top-7 content-center sm:relative sm:right-auto sm:top-auto">
-                <span class=" inline-flex items-center rounded bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800 dark:bg-red-900 dark:text-red-300">
-                  <svg class="me-1 h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
-                  </svg>
-                  Denied
-                </span>
-              </div>
-  
-              <div class="col-span-2 content-center sm:col-span-1 sm:justify-self-end">
-                <button type="button" class="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 sm:w-auto">View details</button>
-              </div>
-            </div>
-  
-            <div class="relative grid grid-cols-2 gap-4 py-6 sm:grid-cols-4 lg:grid-cols-5">
-              <div class="col-span-2 content-center sm:col-span-4 lg:col-span-1">
-                <a href="#" class="text-base font-semibold text-gray-900 hover:underline dark:text-white">#FWB234826346</a>
-              </div>
-  
-              <div class="content-center">
-                <div class="flex items-center gap-2">
-                  <svg class="h-4 w-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z" />
-                  </svg>
-                  <p class="text-sm font-medium text-gray-500 dark:text-gray-400">23 June 2024</p>
-                </div>
-              </div>
-  
-              <div class="content-center">
-                <div class="flex items-center justify-end gap-2 sm:justify-start">
-                  <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-medium text-gray-900 dark:text-white">Reason</span>: Color mismatch</p>
-                </div>
-              </div>
-  
-              <div class="absolute right-0 top-7 content-center sm:relative sm:right-auto sm:top-auto">
-                <span class="  inline-flex items-center rounded bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
-                  <svg class="me-1 h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5" />
-                  </svg>
-                  Completed
-                </span>
-              </div>
-  
-              <div class="col-span-2 content-center sm:col-span-1 sm:justify-self-end">
-                <button type="button" class="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 sm:w-auto">View details</button>
-              </div>
-            </div>
           </div>
+          {% endfor %}
         </div>
   
         <nav class="mt-2 flex items-center justify-center sm:mt-8" aria-label="Page navigation example">
           <ul class="flex h-8 items-center -space-x-px text-sm">
             <li>
-              <a href="#" class="ms-0 flex h-8 items-center justify-center rounded-s-lg border border-e-0 border-gray-300 bg-white px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+              <a href="#" class="ms-0 flex h-8 items-center justify-center rounded-s-lg border border-e-0 border-gray-300 bg-background-light/50 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                 <span class="sr-only">Previous</span>
                 <svg class="h-4 w-4 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7" />
@@ -406,22 +417,22 @@
               </a>
             </li>
             <li>
-              <a href="#" class="flex h-8 items-center justify-center border border-gray-300 bg-white px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+              <a href="#" class="flex h-8 items-center justify-center border border-gray-300 bg-background-light/50 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
             </li>
             <li>
-              <a href="#" class="flex h-8 items-center justify-center border border-gray-300 bg-white px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+              <a href="#" class="flex h-8 items-center justify-center border border-gray-300 bg-background-light/50 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
             </li>
             <li>
-              <a href="#" aria-current="page" class="z-10 flex h-8 items-center justify-center border border-primary-300 bg-primary-50 px-3 leading-tight text-primary-600 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+              <a href="#" aria-current="page" class="z-10 flex h-8 items-center justify-center border border-primary-300 bg-primary-50 px-3 leading-tight text-primary-600 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:text-white">3</a>
             </li>
             <li>
-              <a href="#" class="flex h-8 items-center justify-center border border-gray-300 bg-white px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
+              <a href="#" class="flex h-8 items-center justify-center border border-gray-300 bg-background-light/50 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
             </li>
             <li>
-              <a href="#" class="flex h-8 items-center justify-center border border-gray-300 bg-white px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">100</a>
+              <a href="#" class="flex h-8 items-center justify-center border border-gray-300 bg-background-light/50 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">100</a>
             </li>
             <li>
-              <a href="#" class="flex h-8 items-center justify-center rounded-e-lg border border-gray-300 bg-white px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+              <a href="#" class="flex h-8 items-center justify-center rounded-e-lg border border-gray-300 bg-background-light/50 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                 <span class="sr-only">Next</span>
                 <svg class="h-4 w-4 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7" />
