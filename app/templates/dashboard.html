@@ -3,7 +3,7 @@
 {% block title %}User Info{% endblock %}
 
 {% block breadcrumbs %}
-<a href="#" class="hover:text-gray-800">Dashboard</a>
+<a href="#" class="hover:text-gray-800 dark:text-white">Dashboard</a>
 {% endblock %}
 
 {% block content %}
@@ -17,7 +17,7 @@
         
 
             <!-- Orders Section -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-4 bg-background-light/50">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-4  dark:text-white">
               <div class="p-4 rounded-lg shadow">
                   <div class="flex justify-between items-center">
                       <h3 class="text-xl font-medium ">Tuần này</h3>
@@ -36,7 +36,7 @@
             
             <!-- Orders Table -->
                     <!-- Start coding here -->
-                    <div class="bg-background-light/50 dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+                    <div class=" dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
                         <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
                             <div class="w-full md:w-1/2">
                                 <form class="flex items-center">
@@ -59,13 +59,13 @@
                                     Thêm sách
                                 </button>
                                 <div class="flex items-center space-x-3 w-full md:w-auto">
-                                    <button id="actionsDropdownButton" data-dropdown-toggle="actionsDropdown" class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-background-light/50 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">
+                                    <button id="actionsDropdownButton" data-dropdown-toggle="actionsDropdown" class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none  rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">
                                         <svg class="-ml-1 mr-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                             <path clip-rule="evenodd" fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
                                         </svg>
                                         Tác vụ
                                     </button>
-                                    <div id="actionsDropdown" class="hidden z-10 w-44 bg-background-light/50 rounded divide-y divide-gray-100 shadow dark:divide-gray-600">
+                                    <div id="actionsDropdown" class="hidden z-10 w-44  rounded divide-y divide-gray-100 shadow dark:divide-gray-600">
                                         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="actionsDropdownButton">
                                             <li>
                                                 <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mass Edit</a>
@@ -75,7 +75,7 @@
                                             <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete all</a>
                                         </div>
                                     </div>
-                                    <button id="filterDropdownButton" data-dropdown-toggle="filterDropdown" class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-background-light/50 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">
+                                    <button id="filterDropdownButton" data-dropdown-toggle="filterDropdown" class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none  rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">
                                         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-4 w-4 mr-2 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
                                         </svg>
@@ -84,7 +84,7 @@
                                             <path clip-rule="evenodd" fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
                                         </svg>
                                     </button>
-                                    <div id="filterDropdown" class="z-10 hidden w-48 p-3 bg-background-light/50 rounded-lg shadow">
+                                    <div id="filterDropdown" class="z-10 hidden w-48 p-3  rounded-lg shadow">
                                         <h6 class="mb-3 text-sm font-medium text-gray-900 dark:text-white">Choose brand</h6>
                                         <ul class="space-y-2 text-sm" aria-labelledby="filterDropdownButton">
                                             <li class="flex items-center">
@@ -140,7 +140,7 @@
                                                   <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
                                               </svg>
                                           </button>
-                                          <div id="{{ book.ten_sach | replace(' ', '-')}}-dropdown" class="hidden z-10 w-44 bg-background-light/50 rounded divide-y divide-gray-100 shadow dark:divide-gray-600">
+                                          <div id="{{ book.ten_sach | replace(' ', '-')}}-dropdown" class="hidden z-10 w-44  rounded divide-y divide-gray-100 shadow dark:divide-gray-600">
                                               <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="{{ book.ten_sach | replace(' ', '-')}}-dropdown-button">
                                                   <li>
                                                       <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Show</a>
@@ -168,7 +168,7 @@
                             </span>
                             <ul class="inline-flex items-stretch -space-x-px">
                                 <li>
-                                    <a href="#" class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-background-light/50 rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                    <a href="#" class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500  rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                                         <span class="sr-only">Trước</span>
                                         <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
@@ -176,22 +176,22 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-background-light/50 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+                                    <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500  border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-background-light/50 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+                                    <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500  border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
                                 </li>
                                 <li>
                                     <a href="#" aria-current="page" class="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-primary-600 bg-primary-50 border border-primary-300 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:text-white">3</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-background-light/50 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
+                                    <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500  border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-background-light/50 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">100</a>
+                                    <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500  border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">100</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-background-light/50 rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                    <a href="#" class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500  rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                                         <span class="sr-only">Next</span>
                                         <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
@@ -211,7 +211,7 @@
                         </div> -->
                         <div class="flex items-start gap-8">
                             <!-- Pricing Card -->
-                            <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-background-light/50 rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                            <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                                 <h3 class="mb-4 text-2xl font-semibold">Dịch sách</h3>
                                 <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Dịch vụ dịch sách với AI MarianMT.</p>
                                 <img src="../static/images/translate.png" width="200" height="200" class="mx-auto" />
@@ -250,7 +250,7 @@
                                 <a href="#" class="text-white bg-primary-600 hover:bg-primary focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">Get started</a>
                             </div>
                             <!-- Pricing Card -->
-                            <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-background-light/50 rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                            <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                                 <h3 class="mb-4 text-2xl font-semibold">Sách nói</h3>
                                 <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Công nghệ Text To Speech lấy giọng nói với AI Coqui.</p>
                                 <img src="../static/images/speech.png" width="200" height="200" class="mx-auto" />
@@ -289,7 +289,7 @@
                                 <a href="#" class="text-white bg-primary-600 hover:bg-primary focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">Get started</a>
                             </div>
                             <!-- Pricing Card -->
-                            <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-background-light/50 rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                            <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                                 <h3 class="mb-4 text-2xl font-semibold">Lưu trữ</h3>
                                 <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Lưu trữ File và nội dung sách trên Đám mây.</p>
                                 <img src="../static/images/storage.png" width="200" height="200" class="mx-auto" />
@@ -340,7 +340,7 @@
 
 
 <section>
-    <div class="shadow overflow-hidden sm:rounded-lg bg-background-light/50 p-8">
+    <div class="shadow overflow-hidden sm:rounded-lg  p-8">
       <div class="mx-auto max-w-5xl">
         <div class="gap-4 lg:flex lg:items-center lg:justify-between">
           <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">Lịch sử dữ liệu</h2>
@@ -400,7 +400,7 @@
                   </span>
               </div>
               <div class="col-span-2 content-center sm:col-span-1 sm:justify-self-end">
-                  <button type="button" class="w-full rounded-lg border border-gray-200 bg-background-light/50 px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 sm:w-auto">{{ item.xem_chi_tiet }}</button>
+                  <button type="button" class="w-full rounded-lg border border-gray-200  px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 sm:w-auto">{{ item.xem_chi_tiet }}</button>
               </div>
           </div>
           {% endfor %}
@@ -409,7 +409,7 @@
         <nav class="mt-2 flex items-center justify-center sm:mt-8" aria-label="Page navigation example">
           <ul class="flex h-8 items-center -space-x-px text-sm">
             <li>
-              <a href="#" class="ms-0 flex h-8 items-center justify-center rounded-s-lg border border-e-0 border-gray-300 bg-background-light/50 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+              <a href="#" class="ms-0 flex h-8 items-center justify-center rounded-s-lg border border-e-0 border-gray-300  px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                 <span class="sr-only">Previous</span>
                 <svg class="h-4 w-4 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7" />
@@ -417,22 +417,22 @@
               </a>
             </li>
             <li>
-              <a href="#" class="flex h-8 items-center justify-center border border-gray-300 bg-background-light/50 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+              <a href="#" class="flex h-8 items-center justify-center border border-gray-300  px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
             </li>
             <li>
-              <a href="#" class="flex h-8 items-center justify-center border border-gray-300 bg-background-light/50 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+              <a href="#" class="flex h-8 items-center justify-center border border-gray-300  px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
             </li>
             <li>
               <a href="#" aria-current="page" class="z-10 flex h-8 items-center justify-center border border-primary-300 bg-primary-50 px-3 leading-tight text-primary-600 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:text-white">3</a>
             </li>
             <li>
-              <a href="#" class="flex h-8 items-center justify-center border border-gray-300 bg-background-light/50 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
+              <a href="#" class="flex h-8 items-center justify-center border border-gray-300  px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
             </li>
             <li>
-              <a href="#" class="flex h-8 items-center justify-center border border-gray-300 bg-background-light/50 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">100</a>
+              <a href="#" class="flex h-8 items-center justify-center border border-gray-300  px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">100</a>
             </li>
             <li>
-              <a href="#" class="flex h-8 items-center justify-center rounded-e-lg border border-gray-300 bg-background-light/50 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+              <a href="#" class="flex h-8 items-center justify-center rounded-e-lg border border-gray-300  px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                 <span class="sr-only">Next</span>
                 <svg class="h-4 w-4 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7" />

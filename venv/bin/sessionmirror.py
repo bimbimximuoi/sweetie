@@ -1,4 +1,4 @@
-#!/Users/realestzan/Project/Coding/Web/ARCHIVE/server/venv/bin/python3.9
+#!/Users/realestzan/Project/Coding/Web/ARCHIVE/server/venv/bin/python
 '''
 The MIT License (MIT)
 

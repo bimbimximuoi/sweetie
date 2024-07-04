@@ -1,0 +1,2 @@
+runtime: python39  # or your Python version
+entrypoint: gunicorn -b :$PORT main:app
