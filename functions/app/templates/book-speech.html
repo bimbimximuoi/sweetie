@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}User Info{% endblock %}
+
+{% block breadcrumbs %}
+<a href="{{ url_for('main_bp.book') }}" class="hover:text-background-light">Books</a>
+<span class="mx-2 text-gray-600">/</span>
+<a href="{{ url_for('main_bp.book_upload') }}" class="hover:text-background-light">Speech<a>
+{% endblock %}
+
+{% block content %}
+<main class="rounded-lg">
+    
+    <h1 class="text-3xl font-bold mb-4 flex gap-4 items-center"><img width="50" height="50" src="{{ url_for('static', filename='images/speech.png') }}" alt=""><span class="text-2xl font-semibold">Sách nói: {{ book_data.metadata.title }}</h1>
+    <form id="speechForm" class="mb-4">
+        <input type="hidden" name="book_data" value="{{ book_data.texts }}">
+        <button type="button" onclick="submitSpeechForm()" class="bg-background-dark hover:bg-secondary text-background-light hover:text-background-dark font-bold py-2 px-4 rounded mt-4 inline-block">Generate Speech</button>
+    </form>
+    <div id="progressContainer" style="display: none;" class="mb-4">
+        <h2 class="text-xl font-bold mb-2">Speech Generation Progress</h2>
+        <progress id="progressBar" value="0" max="100" class="w-full h-4 bg-gray-200 rounded-lg"></progress>
+    </div>
+    <div id="audioContainer" style="display: none;" class="mb-4">
+        <h2 class="text-xl font-bold mb-2">Generated Audio</h2>
+        <audio id="audioPlayer" controls class="w-full">
+            <source id="audioSource" src="" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+        <a id="downloadButton" href="#" download="output.wav" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">Tải File Audio</a>
+        <a id="downloadButton" href="#" download="output.wav" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">Lưu trữ Đám mây</a>
+    </div>
+
+    <div class="mt-6">
+        {% for page, text in book_data.texts.items() %}
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold">{{ page }}</h2>
+                <p class="text-lg">{{ text }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const socket = io();
+
+            socket.on('progress', (data) => {
+                const progressBar = document.getElementById('progressBar');
+                progressBar.value = data.progress;
+            });
+
+            window.submitSpeechForm = function() {
+                const form = document.getElementById('speechForm');
+                const formData = new FormData(form);
+                const book_data = {{ book_data.texts | tojson }};
+                const socket_id = socket.id;
+
+                document.getElementById('progressContainer').style.display = 'block';
+
+                fetch('/api/book/speech', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ text: Object.values(book_data).join('\n'), socket_id })
+                })
+                .then(response => response.blob())
+                .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const audioPlayer = document.getElementById('audioPlayer');
+                    const audioSource = document.getElementById('audioSource');
+                    const downloadButton = document.getElementById('downloadButton');
+
+                    audioSource.src = url;
+                    audioPlayer.load();
+                    downloadButton.href = url;
+                    downloadButton.style.display = 'inline-block';
+
+                    document.getElementById('progressContainer').style.display = 'none';
+                    document.getElementById('audioContainer').style.display = 'block';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('progressContainer').style.display = 'none';
+                });
+            };
+        });
+    </script>
+</main>
+{% endblock %}

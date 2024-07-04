@@ -1,0 +1,168 @@
+/* Mobile styles */
+@media only screen and (max-width: 1024px) {
+    * { 
+        font-size: 25px;
+        text-align: justify;
+    }
+
+
+
+
+    /* HEADER RESPONSIVE */
+    header .button-90 { 
+        display: none !important;
+    }
+    header { 
+        margin-top: 5vh;
+        position: static !important;;
+        height: 10vh !important;
+    }
+    header nav { 
+        display: flex !important;;
+        justify-content: space-between !important;
+        width: 90vw;
+    }
+    header a { 
+        font-size: 20px !important;
+    }
+    header a.fs-1 { 
+        display: none;
+    }
+ 
+  
+
+
+
+
+  
+    strong { 
+        text-align: center;
+        width: 100%;
+    }
+    .bs-50 { 
+        flex-basis: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .w-60 { 
+        width: 80vw !important;
+    }
+    .mg-h-20vw { 
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+    .mg-v-20vh { 
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+    }
+    
+    .jtf-btw { 
+        display: flex;
+        flex-direction: column !important;
+        justify-content: center;
+    }
+    .button-90{ 
+        background-color: red;
+    }
+    .pd-5r { 
+        padding: 3rem;
+    }
+    .mg-t-5r, .mg-t-10vh, .mg-t-3r, .mg-t-4r { 
+        margin-top: 5vh !important;
+    }
+
+    .pst-fx { 
+        position: static;
+    }
+
+
+    
+
+
+    #cl {
+        display: none;
+        transition: 0.4s linear;
+    }
+
+
+    #cl { 
+        display: block;
+    }
+
+    img { 
+        margin-left: auto;
+        margin-right: auto;
+        height: 50vh !important;
+        width: 90vw !important;
+    }
+
+    .h-90 { 
+        height: fit-content;
+    }
+
+    .ct { 
+        margin: 0 10vw 0 10vw;
+    }
+
+
+    .fs-3, .fs-4 { 
+        font-size: 2rem;
+    }
+    .fs-2, .fs-15, li { 
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+    }
+
+
+   
+
+
+
+    
+
+
+
+
+    /* TABLE RESPONSIVE */
+    tr { 
+        display: flex;
+        flex-wrap: wrap;
+    }
+    td, th{ 
+        width: 25%;
+        font-size: 3vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    li, p { 
+        margin-top: 1rem;
+    }
+
+
+
+
+
+
+
+
+
+
+    /* FOOTER RESPONSIVE */
+    footer { 
+        flex-wrap: wrap;
+        height: fit-content !important;
+        align-items: start;
+    }
+    footer > div { 
+        margin-top: 10vh;
+        flex-basis: 90%;
+    }
+    footer a { 
+        margin-bottom: 3vh;
+    }
+    article h1 { 
+        display: none;
+    }
+}

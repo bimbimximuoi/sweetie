@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sách nói</title>
+</head>
+<body>
+    <h1>Sách nói</h1>
+    <textarea id="text-input" rows="10" cols="50" placeholder="Enter text here..."></textarea><br>
+    <button id="convert-button">Convert to Speech</button>
+    <audio id="audio-player" controls></audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const storedText = localStorage.getItem('bookText');
+            if (storedText) {
+                document.getElementById('text-input').value = storedText;
+            }
+        });
+
+        document.getElementById('convert-button').addEventListener('click', async () => {
+            const text = document.getElementById('text-input').value;
+            if (!text) {
+                alert('Please enter some text');
+                return;
+            }
+
+            const response = await fetch('/tts', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text })
+            });
+
+            if (response.ok) {
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+                const audioPlayer = document.getElementById('audio-player');
+                audioPlayer.src = url;
+                audioPlayer.play();
+            } else {
+                alert('Failed to convert Sách nói');
+            }
+        });
+    </script>
+</body>
+</html>

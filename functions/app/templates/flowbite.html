@@ -1,0 +1,298 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+  <section>
+    <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+        <div class="h-[50vh] flex items-center justify-center">
+            <img width="400" height="400" class="object-contain  absolute z-20" src="../static/images/logo.png" />
+        <img width="600" height="600" class="object-contain  absolute dark:hidden rounded-3xl" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image">
+        <img width="600" height="600" class="object-contain rounded-3xl absolute hidden dark:block" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard image">
+    </div>
+        <div class="mt-4 md:mt-0">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold  dark:text-white">Dịch vụ Sách Hoàn Hảo Cho Bạn.</h2>
+            <p class="mb-6 font-light  md:text-lg dark:text-gray-400">Chào mừng bạn đến với dịch vụ sách - Sweetie toàn diện của chúng tôi, nơi bạn có thể dễ dàng dịch, nghe podcast, trích xuất từ và lưu trữ sách trên đám mây.
+
+.</p>
+            <a href="/book" class="inline-flex items-center text-white bg-background-dark dark:bg-background-light hover:bg-primary focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
+                Bắt đầu
+                <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </a>
+        </div>
+    </div>
+  </section>
+
+
+  
+  
+  <section>
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+        <div class="max-w-screen-md mb-8 lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold  dark:text-white">Thiết kế cho các nhóm doanh nghiệp như của bạn</h2>
+            <p class=" sm:text-xl dark:text-gray-400">Tại Sweetie, chúng tôi tập trung vào các thị trường nơi công nghệ, đổi mới và vốn có thể mở khóa giá trị dài hạn và thúc đẩy tăng trưởng kinh tế.</p>
+        </div>
+        <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+            <div>
+                <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                    <!-- Icon here -->
+                </div>
+                <h3 class="mb-2 text-xl font-bold dark:text-white">Dịch Sách</h3>
+                <p class=" dark:text-gray-400">Dịch sách của bạn sang nhiều ngôn ngữ khác nhau với độ chính xác cao. Hỗ trợ các ngôn ngữ: Tiếng Anh, Tiếng Pháp, Tiếng Nhật, Tiếng Hàn, và nhiều hơn nữa. .</p>
+            </div>
+            <div>
+                <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                    <!-- Icon here -->
+                </div>
+                <h3 class="mb-2 text-xl font-bold dark:text-white">Podcast</h3>
+                <p class=" dark:text-gray-400">Nghe sách của bạn dưới dạng podcast với giọng đọc cuốn hút. Dễ dàng truy cập các tập podcast bất kỳ lúc nào, bất kỳ nơi đâu. .</p>
+            </div>
+            <div>
+                <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                    <!-- Icon here -->
+                </div>
+                <h3 class="mb-2 text-xl font-bold dark:text-white">Cộng đồng</h3>
+                <p class=" dark:text-gray-400">Tham gia các nhóm đọc sách, thảo luận về sách và tham gia vào các sự kiện của cộng đồng đọc sách.</p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+
+
+
+
+                   <!-- More Orders... -->
+                   <section>
+                     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+                       <div class="flex items-start gap-8">
+                         <!-- Pricing Card: Dịch sách -->
+                         <div class="flex flex-col p-6 mx-auto max-w-lg text-center  bg-background-light/50 rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                           <h3 class="mb-4 text-2xl font-semibold">Dịch sách</h3>
+                           <p class="font-light  sm:text-lg dark:text-gray-400">Dịch vụ dịch sách với AI MarianMT.</p>
+                           <img src="../static/images/translate.png" width="200" height="200" class="mx-auto" />
+                           <div class="flex justify-center items-baseline my-8">
+                             <!-- <span class="mr-2 text-5xl font-extrabold">$29</span> -->
+                             <!-- <span class=" dark:text-gray-400 my-4">Miễn phí</span> -->
+                           </div>
+                           <!-- List -->
+                           <ul role="list" class="mb-8 space-y-4 text-left">
+                             <li class="flex items-center space-x-3">
+                               <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                               <span>Cấu hình cá nhân hóa</span>
+                             </li>
+                             <li class="flex items-center space-x-3">
+                               <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                               <span>Phát triển tính năng AI</span>
+                             </li>
+                             <li class="flex items-center space-x-3">
+                               <!-- <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> -->
+                               <!-- <span>Quy mô đội ngũ: <span class="font-semibold">1 nhà phát triển</span></span> -->
+                             </li>
+                             <li class="flex items-center space-x-3">
+                               <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                               <span>Hỗ trợ truy vấn: <span class="font-semibold">6 tháng</span></span>
+                             </li>
+                             <li class="flex items-center space-x-3">
+                               <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                               <span>Lưu trữ miễn phí: <span class="font-semibold">6 tháng</span></span>
+                             </li>
+                           </ul>
+                           <a href="#" class="text-white bg-primary hover:bg-primary focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary-900">Bắt đầu ngay</a>
+                         </div>
+                         <!-- Pricing Card: Sách nói -->
+                         <div class="flex flex-col p-6 mx-auto max-w-lg text-center  bg-background-light/50 rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                           <h3 class="mb-4 text-2xl font-semibold">Sách nói</h3>
+                           <p class="font-light  sm:text-lg dark:text-gray-400">Công nghệ Text To Speech lấy giọng nói với AI Coqui.</p>
+                           <img src="../static/images/speech.png" width="200" height="200" class="mx-auto" />
+                           <div class="flex justify-center items-baseline my-8">
+                             <!-- <span class="mr-2 text-5xl font-extrabold">$99</span> -->
+                             <!-- <span class=" dark:text-gray-400 my-8">Miễn phí</span> -->
+                           </div>
+                           <!-- List -->
+                           <ul role="list" class="mb-8 space-y-4 text-left">
+                             <li class="flex items-center space-x-3">
+                               <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                               <span>Cấu hình cá nhân hóa</span>
+                             </li>
+                             <li class="flex items-center space-x-3">
+                               <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                               <span>Không có phí cài đặt, phí ẩn</span>
+                             </li>
+                             <li clasPhát triển tính năng AI">
+                                <!-- <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> -->
+
+                             </li>
+                             <li class="flex items-center space-x-3">
+                               <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                               <span>Hỗ trợ truy vấn: <span class="font-semibold">24 tháng</span></span>
+                             </li>
+                             <li class="flex items-center space-x-3">
+                               <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                               <span>Lưu trữ miễn phí: <span class="font-semibold">24 tháng</span></span>
+                             </li>
+                           </ul>
+                           <a href="#" class="text-white bg-primary hover:bg-primary focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary-900">Bắt đầu ngay</a>
+                         </div>
+                         <!-- Pricing Card: Lưu trữ -->
+                         <div class="flex flex-col p-6 mx-auto max-w-lg text-center  bg-background-light/50 rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                           <h3 class="mb-4 text-2xl font-semibold">Lưu trữ</h3>
+                           <p class="font-light  sm:text-lg dark:text-gray-400">Lưu trữ File và nội dung sách trên Đám mây.</p>
+                           <img src="../static/images/storage.png" width="200" height="200" class="mx-auto" />
+                           <div class="flex justify-center items-baseline my-8">
+                             <!-- <span class="mr-2 text-5xl font-extrabold">$499</span> -->
+                             <!-- <span class=" dark:text-gray-400 my-8">Miễn phí</span> -->
+                           </div>
+                           <!-- List -->
+                           <ul role="list" class="mb-8 space-y-4 text-left">
+                             <li class="flex items-center space-x-3">
+                               <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                               <span>Cấu hình cá nhân hóa</span>
+                             </li>
+                             <li class="flex items-center space-x-3">
+                               <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                               <span>Phát triển tính năng AI</span>
+                             </li>
+                             <li class="flex items-center space-x-3">
+                               <!-- <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> -->
+                               <!-- <span>Quy mô đội ngũ: <span class="font-semibold">100+ nhà phát triển</span></span> -->
+                             </li>
+                             <li class="flex items-center space-x-3">
+                               <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                               <span>Hỗ trợ truy vấn: <span class="font-semibold">36 tháng</span></span>
+                             </li>
+                             <li class="flex items-center space-x-3">
+                               <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                               <span>Lưu trữ miễn phí: <span class="font-semibold">36 tháng</span></span>
+                             </li>
+                           </ul>
+                           <a href="#" class="text-white bg-primary hover:bg-primary focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary-900">Bắt đầu ngay</a>
+                         </div>
+                       </div>
+                     </div>
+                   </section>
+
+  
+
+  <section class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 dark:text-whtie">
+    <div>
+      <div class="flex flex-wrap w-full mb-20">
+        <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+          <h2 class="mb-4 text-4xl tracking-tight font-extrabold  dark:text-white">Lưu trữ sách của bạn một cách an toàn trên đám mây.</h2>
+          <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+        </div>
+        <p class="lg:w-1/2 w-full leading-relaxed ">Dễ dàng truy cập sách từ bất kỳ thiết bị nào có kết nối internet.</p>
+      </div>
+      <div class="flex flex-wrap -m-4">
+
+        <div class="xl:w-1/4 md:w-1/2 p-4 dark:text-white">
+          <div class="p-6 rounded-lg">
+            <img class="h-40 rounded w-full object-cover object-center mb-6" src="../static/images/storage.png" alt="Lưu trữ đám mây">
+            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">LƯU TRỮ ĐÁM MÂY</h3>
+            <h2 class="text-lg  font-medium title-font mb-4">Lưu Trữ An Toàn</h2>
+            <p class="leading-relaxed">Lưu trữ sách của bạn an toàn và dễ dàng truy cập từ mọi thiết bị.</p>
+          </div>
+        </div>
+        <div class="xl:w-1/4 md:w-1/2 p-4 dark:text-white">
+          <div class="p-6 rounded-lg">
+            <img class="h-40 rounded w-full object-cover object-center mb-6" src="../static/images/translate.png" alt="Dịch sách">
+            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">DỊCH SÁCH</h3>
+            <h2 class="text-lg  font-medium title-font mb-4">Dịch Chính Xác</h2>
+            <p class="leading-relaxed">Dịch sách sang nhiều ngôn ngữ với độ chính xác cao và nhanh chóng.</p>
+          </div>
+        </div>
+        <div class="xl:w-1/4 md:w-1/2 p-4 dark:text-white">
+          <div class="p-6 rounded-lg">
+            <img class="h-40 rounded w-full object-cover object-center mb-6" src="../static/images/speech.png" alt="Podcast sách">
+            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">PODCAST SÁCH</h3>
+            <h2 class="text-lg  font-medium title-font mb-4">Nghe Mọi Lúc</h2>
+            <p class="leading-relaxed">Nghe sách dưới dạng podcast với giọng đọc cuốn hút bất kỳ lúc nào.</p>
+          </div>
+        </div>
+        <div class="xl:w-1/4 md:w-1/2 p-4 dark:text-white">
+          <div class="p-6 rounded-lg">
+            <img class="h-40 rounded w-full object-cover object-center mb-6" src="../static/images/storage.png" alt="Trích xuất từ">
+            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">TRÍCH XUẤT TỪ</h3>
+            <h2 class="text-lg  font-medium title-font mb-4">Học Từ Mới</h2>
+            <p class="leading-relaxed">Trích xuất từ khóa và cụm từ quan trọng để học từ mới hiệu quả.</p>
+          </div>
+        </div>
+
+    </div>
+  </section>
+
+
+  <footer class="p-4 mt-[20vh] pt-[5vh] dark:bg-gray-800">
+    <div class="mx-auto max-w-screen-xl">
+        <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+                <a href="#" class="flex items-center">
+                    <img src="../static/images/logo.png" class="mr-3 h-8" alt="Sweetie Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Sweetie</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold  uppercase dark:text-white">Tài nguyên</h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Trang chủ</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Dịch vụ sách</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold  uppercase dark:text-white">Theo dõi chúng tôi</h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Github</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Discord</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold  uppercase dark:text-white">Pháp lý</h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Chính sách bảo mật</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Điều khoản &amp; Điều kiện</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm  sm:text-center dark:text-gray-400">© 2024 Sweetie™. All Rights Reserved.
+            </span>
+            <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                <a href="#" class=" hover: dark:hover:text-white">
+                    <!-- Social Icon -->
+                </a>
+                <a href="#" class=" hover: dark:hover:text-white">
+                    <!-- Social Icon -->
+                </a>
+                <a href="#" class=" hover: dark:hover:text-white">
+                    <!-- Social Icon -->
+                </a>
+                <a href="#" class=" hover: dark:hover:text-white">
+                    <!-- Social Icon -->
+                </a>
+                <a href="#" class=" hover: dark:hover:text-white">
+                    <!-- Social Icon -->
+                </a>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+</body>
+</html>
+{% endblock %}
+```

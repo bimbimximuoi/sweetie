@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}User Profile{% endblock %}
+
+{% block breadcrumbs %}
+<a href="{{ url_for('main_bp.user_profile') }}" class="hover:text-gray-800">User Profile</a>
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto p-4">
+    <h1 class="text-3xl font-bold mb-4">User Profile</h1>
+    <div id="userInfo" class="bg-white shadow p-6 rounded-lg mb-4"></div>
+    <button id="signOut" class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded">Sign Out</button>
+
+    <h2 class="text-2xl font-bold mb-4 mt-6">Published Books</h2>
+    <div id="published-books" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+    <h2 class="text-2xl font-bold mb-4 mt-6">Books</h2>
+    <div id="books" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+    <h2 class="text-2xl font-bold mb-4 mt-6">User Files</h2>
+    <div id="user-files" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+</div>
+
+<script>
+    // Fetch user data from session
+    fetch('/auth/user', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(response => response.json())
+      .then(data => {
+          if (data.success) {
+              const userInfoDiv = document.getElementById('userInfo');
+              userInfoDiv.innerHTML = `
+                  <p><strong>UID:</strong> ${data.user.uid}</p>
+                  <p><strong>Email:</strong> ${data.user.email}</p>
+                  <p><strong>Name:</strong> ${data.user.name}</p>
+              `;
+
+              // Fetch user's published books
+              fetch(`/user/${data.user.uid}/published-books`)
+                .then(response => response.json())
+                .then(booksData => {
+                    const publishedBooksDiv = document.getElementById('published-books');
+                    booksData.forEach(book => {
+                        publishedBooksDiv.innerHTML += `
+                            <div class="published-book bg-white shadow p-6 rounded-lg">
+                                <h3 class="text-xl font-bold">${book.title}</h3>
+                                <p><strong>Tác giả:</strong> ${book.authors.join(', ')}</p>
+                                <p><strong>Subject:</strong> ${book.subject}</p>
+                                <p><strong>Từ khoá:</strong> ${book.keywords}</p>
+                                <img src="data:image/jpeg;base64,${book.cover_image}" alt="Cover Image" class="w-full h-48 object-cover mb-4 rounded">
+                                <p><strong>Created Date:</strong> ${book.created_date}</p>
+                                <p><strong>Public:</strong> ${book.public}</p>
+                            </div>
+                        `;
+                    });
+                });
+
+              // Fetch user's books
+              fetch(`/user/${data.user.uid}/books`)
+                .then(response => response.json())
+                .then(booksData => {
+                    const booksDiv = document.getElementById('books');
+                    booksData.forEach(book => {
+                        booksDiv.innerHTML += `
+                            <div class="book bg-white shadow p-6 rounded-lg">
+                                <h3 class="text-xl font-bold">${book.title}</h3>
+                                <p><strong>Tác giả:</strong> ${book.authors.join(', ')}</p>
+                                <p><strong>Subject:</strong> ${book.subject}</p>
+                                <p><strong>Từ khoá:</strong> ${book.keywords}</p>
+                                <img src="data:image/jpeg;base64,${book.cover_image}" alt="Cover Image" class="w-full h-48 object-cover mb-4 rounded">
+                                <p><strong>Created Date:</strong> ${book.created_date}</p>
+                                <p><strong>Public:</strong> ${book.public}</p>
+                            </div>
+                        `;
+                    });
+                });
+
+              // Fetch user's files
+              fetch(`/storage/download/${data.user.uid}`)
+                .then(response => response.json())
+                .then(filesData => {
+                    const filesDiv = document.getElementById('user-files');
+                    filesData.forEach(file => {
+                        filesDiv.innerHTML += `
+                            <div class="user-file bg-white shadow p-6 rounded-lg">
+                                <p><strong>File Name:</strong> ${file}</p>
+                                <a href="/storage/get/${file}" class="text-primary hover:underline">Download</a>
+                            </div>
+                        `;
+                    });
+                });
+          } else {
+              console.log('Failed to fetch user data');
+          }
+      });
+
+    // Handle sign out
+    document.getElementById('signOut').addEventListener('click', function() {
+        fetch('/auth/signout', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => response.json())
+          .then(data => {
+              if (data.success) {
+                  window.location.href = '/signin';
+              } else {
+                  console.log('Sign out failed');
+              }
+          });
+    });
+</script>
+{% endblock %}

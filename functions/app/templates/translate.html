@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate Book</title>
+</head>
+<body>
+    <h1>Translate Book</h1>
+    <form action="/api/translate" method="post" enctype="multipart/form-data">
+        <label for="file">Choose a file:</label>
+        <input type="file" id="file" name="file" required><br><br>
+
+        <label for="model_name">Select translation model:</label>
+        <select id="model_name" name="model_name">
+            <option value="Helsinki-NLP/opus-mt-en-vi">English to Vietnamese</option>
+            <option value="Helsinki-NLP/opus-mt-en-fr">English to French</option>
+            <option value="Helsinki-NLP/opus-mt-en-de">English to German</option>
+            <!-- Add more options as needed -->
+        </select><br><br>
+
+        <input type="submit" value="Translate">
+    </form>
+</body>
+</html>

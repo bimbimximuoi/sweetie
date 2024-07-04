@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Orders Dashboard{% endblock %}</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        /* Add some custom styles for the dropdown */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            z-index: 10;
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+        .dropdown-menu.show {
+            display: block;
+        }
+        .sidebar-expanded {
+            width: 16rem;
+        }
+        .sidebar-collapsed {
+            width: 4rem;
+            overflow: hidden;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+    </style>    
+  <link rel="stylesheet" href="../static/css/output.css">
+</head>
+<body class="transition-colors duration-300">
+    <script>
+        // Set the theme on initial load based on localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark', 'bg-background-dark', 'text-text-dark');
+            document.getElementsByClassName('bg-background-light').classList.add('dark', 'bg-background-dark', 'text-text-dark');
+            document.body.classList.remove('bg-background-light', 'text-text-light');
+            document.getElementsByClassName('bg-background-light').remove('bg-background-light', 'text-text-light');
+
+            document.getElementsByClassName('bg-background-light/50').remove('bg-background-light/50', 'text-background-light');
+            document.getElementsByClassName('bg-background-light/50').add('bg-background-dark/50');
+        } else {
+            document.body.classList.add('bg-background-light', 'text-text-light');
+            document.body.classList.remove('dark', 'bg-background-dark', 'text-text-dark');
+
+            document.getElementsByClassName('bg-background-dark/50').remove('bg-background-dark/50');
+            document.getElementsByClassName('bg-background-dark/50').add('bg-background-light/50');
+        }
+    </script>
+    <div class="bg-background-light"></div>
+    <div class="absolute blur-[200px] bg-blue-500 -z-[1] h-[30vh] w-[30vh] right-[20vw] top-[30vh]"></div>
+    <div class="absolute blur-[150px] bg-yellow-500 -z-[1] h-[20vh] w-[20vh] left-[5vw] top-[5vh]"></div>
+    <div class="absolute blur-[200px] bg-orange-500 -z-[1] h-[20vh] w-[20vh] left-[20vw] bottom-[20vh]"></div>
+    <div class="absolute blur-[70px] bg-red-700 -z-[1] zid-01 s-50 bl-25 l-10 t-80 zid-01" style="background-color: rgb(198, 22, 22); position: fixed;"></div>
+
+    <div class="min-h-screen flex overflow-hidden">
+
+    
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar w-64 shadow-lg transition-width duration-300 dark:text-white fixed">
+            <div class="h-screen px-4 py-6 flex flex-col justify-between">
+                <a href="#" class="flex items-center px-4 py-2 mt-2 rounded-lg hover:bg-gray-200 hover:text-gray-800 gap-4">
+                    <img width="50" height="50" src="{{ url_for('static', filename='images/logo.png') }}" alt=""><span class="text-2xl font-semibold">Sweetie</span>
+                </a>
+                <nav class="mt-6 flex flex-col gap-4">
+                   
+                    <a href="{{ url_for('main_bp.dashboard') }}" class="flex items-center px-4 py-2 mt-2 rounded-lg hover:bg-gray-200 hover:text-gray-800">
+                        <i class="ph text-2xl ph-house mr-3"></i><span class="sidebar-text">Trang chủ</span>
+                    </a>
+                    <a href="{{ url_for('main_bp.book') }}" class="flex items-center px-4 py-2 mt-2 rounded-lg hover:bg-gray-200 hover:text-gray-800">
+                        <i class="ph text-2xl ph-book mr-3"></i><span class="sidebar-text">Dịch vụ sách</span>
+                    </a>
+                    <a href="{{ url_for('main_bp.community_books') }}" class="flex items-center px-4 py-2 mt-2 rounded-lg hover:bg-gray-200 hover:text-gray-800">
+                        <i class="ph text-2xl ph-users mr-3"></i><span class="sidebar-text">Cộng đồng</span>
+                    </a>
+                    <a href="{{ url_for('main_bp.user') }}" class="flex items-center px-4 py-2 mt-2 rounded-lg hover:bg-gray-200 hover:text-gray-800">
+                        <i class="ph text-2xl ph-user mr-3"></i><span class="sidebar-text">Tài khoản</span>
+                    </a>
+                    <a href="{{ url_for('main_bp.welcome') }}" class="flex items-center px-4 py-2 mt-2 rounded-lg hover:bg-gray-200 hover:text-gray-800">
+                        <i class="ph text-2xl ph-question-mark mr-3"></i><span class="sidebar-text">Về dự án</span>
+                    </a>
+                </nav>
+                <div class="mt-auto flex flex-col gap-4">
+                    <button onclick="toggleTheme()" class="flex items-center px-4 py-2 mt-2 rounded-lg hover:bg-gray-200 hover:text-gray-800">
+                        <i class="ph text-2xl ph-moon-stars mr-3"></i><span class="sidebar-text">Chế độ tối</span>
+                    </button>
+                    <button onclick="toggleSidebar()" class="flex items-center px-4 py-2 mt-2 rounded-lg hover:bg-gray-200 hover:text-gray-800">
+                        <i class="ph text-2xl ph-arrows-in mr-3"></i><span class="sidebar-text">Thu gọn thanh</span>
+                    </button>
+                    <a href="#" class="flex items-center px-4 py-2 mt-2 rounded-lg hover:bg-gray-200 hover:text-gray-800">
+                        <i class="ph text-2xl ph-gear mr-3"></i><span class="sidebar-text">Cài đặt</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <div class="flex-1 flex flex-col overflow-hidden ml-[21.5vh]">
+            <!-- Header -->
+            <header class="shadow flex items-center justify-between px-6 py-4 relative">
+                <div class="flex items-center">
+                    <nav class="flex">
+                        {% block breadcrumbs %}
+                        <a href="#" class="hover:text-gray-800">Trang chủ</a>
+                        {% endblock %}
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- <input type="text" class="form-input w-64 bg-transparent outline-none text-xl" placeholder="Search..."> -->
+                    {% include 'header.html' %}
+                    <div class="relative">
+                        <img id="userAvatar" width="50" height="50" src="{{ url_for('static', filename='images/avatar.png') }}" alt="User Avatar" class="rounded-full cursor-pointer" onclick="toggleDropdown()">
+                        <div id="dropdown-menu" class="dropdown-menu mt-2 py-2 w-48">
+                            <a href="#" class="block px-4 py-2  hover:bg-gray-100">Tài khoản của tôi</a>
+                            <a href="#" class="block px-4 py-2  hover:bg-gray-100">Cài đặt</a>
+                            <a href="#" class="block px-4 py-2  hover:bg-gray-100">Hỗ trợ</a>
+                            <a href="#" class="block px-4 py-2  hover:bg-gray-100" id="signOut">Đăng xuất</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Main Content -->
+            <main class="overflow-hidden w-full h-full p-6">
+                {% block content %}{% endblock %}
+            </main>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            document.getElementById('dropdown-menu').classList.toggle('show');
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark');
+            if (document.body.classList.contains('dark')) {
+                document.body.classList.remove('bg-background-light', 'text-text-light');
+                document.body.classList.add('bg-background-dark', 'text-text-dark');
+                localStorage.setItem('theme', 'dark');
+                document.querySelectorAll('.bg-background-light').forEach(el => {
+                    el.classList.remove('bg-background-light');
+                    el.classList.add('bg-background-dark');
+                });
+                document.querySelectorAll('.text-text-light').forEach(el => {
+                    el.classList.remove('text-text-light');
+                    el.classList.add('text-text-dark');
+                });
+            } else {
+                document.body.classList.remove('bg-background-dark', 'text-text-dark');
+                document.body.classList.add('bg-background-light', 'text-text-light');
+                localStorage.setItem('theme', 'light');
+                document.querySelectorAll('.bg-background-dark').forEach(el => {
+                    el.classList.remove('bg-background-dark');
+                    el.classList.add('bg-background-light');
+                });
+                document.querySelectorAll('.text-text-dark').forEach(el => {
+                    el.classList.remove('text-text-dark');
+                    el.classList.add('text-text-light');
+                });
+            }
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('sidebar-expanded');
+            sidebar.classList.toggle('sidebar-collapsed');
+            const sidebarTexts = document.querySelectorAll('.sidebar-text');
+            sidebarTexts.forEach(text => text.classList.toggle('hidden'));
+        }
+
+        function checkUser() {
+            fetch('/auth/user/detail', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const user = data.user;
+                    const avatar = document.getElementById('userAvatar');
+                    avatar.src = user.avatar || "{{ url_for('static', filename='images/avatar.png') }}";
+                    console.log('user is in')
+                }
+            }).catch(error => console.error('Error:', error));
+        }
+
+        window.onload = checkUser;
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.w-10')) {
+                var dropdowns = document.getElementsByClassName("dropdown-menu");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        document.getElementById('signOut').addEventListener('click', function() {
+            fetch('/auth/signout', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    window.location.reload();
+                }
+            }).catch(error => console.error('Error:', error));
+        });
+    </script>
+  <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
